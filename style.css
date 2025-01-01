@@ -24,7 +24,7 @@ body {
     width: 500px; /* Độ rộng 500 đơn vị */
     height: 100px; /* Chiều cao 100 đơn vị */
     background-color: #ADD8E6; /* Màu xanh biển nhạt */
-    border-radius: 50%; /* Bo tròn 100% */
+    border-radius: 100%; /* Bo tròn 100% */
     border: 10px solid #000000; /* Viền dày 10 đơn vị màu đen */
     display: flex;
     justify-content: center;
