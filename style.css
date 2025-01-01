@@ -1,53 +1,50 @@
-/******** Search Bar Animation ********/
+/* Đặt font Lexend cho toàn bộ trang */
+body {
+    font-family: 'Lexend', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f0f0f0; /* Màu nền sáng để dễ nhìn */
+}
+
+/* Container chứa thanh tìm kiếm */
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px; /* Cách mép trên 100 đơn vị */
+}
+
+/* Thanh tìm kiếm */
 .search-bar {
     position: relative;
-    -webkit-animation: light-sweep 4s linear infinite, gradient-move 5s linear infinite;
-    animation: light-sweep 4s linear infinite, gradient-move 5s linear infinite;
-    background: linear-gradient(to left, #B1FFFD, #FFF9A6, #FFCDD2, #B1FFFD, #FFF9A6, #FFCDD2, #B1FFFD, #FFF9A6, #FFCDD2, #B1FFFD, #FFF9A6, #FFCDD2, #B1FFFD, #FFF9A6, #FFCDD2);
-    background-size: 600% 100%;
-    background-position: 100% 0%;
-    border-radius: 24px;
-    padding-left: 30px;
-    height: 200px;
-    width: 100%;
+    width: 500px; /* Độ rộng 500 đơn vị */
+    height: 100px; /* Chiều cao 100 đơn vị */
+    background-color: #ADD8E6; /* Màu xanh biển nhạt */
+    border-radius: 50%; /* Bo tròn 100% */
+    border: 10px solid #000000; /* Viền dày 10 đơn vị màu đen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.search-bar::before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: 0;
-  width: 47px;
-  height: 47px;
-  background-image: url('data:image/jpeg;base64,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');
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
+/* Input trong thanh tìm kiếm */
 .search-bar input {
+    width: 90%; /* Để lại không gian cho placeholder */
+    height: 60%; /* Chiều cao khoảng 60% của search bar */
     border: none;
     outline: none;
     background: transparent;
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-    width: 100%;
-    height: 100%;
-    padding-left: 45px; /* To give space for the icon */
+    font-size: 18px;
+    color: black; /* Màu chữ khi nhập vào là đen */
+    text-align: center;
+    font-weight: 400;
 }
 
+/* Placeholder */
 .search-bar input::placeholder {
-    color: #000;
-    opacity: 0.6;
-}
-
-@keyframes light-sweep {
-    0% { background-position: 100% 0%; }
-    100% { background-position: 0 0%; }
-}
-
-@keyframes gradient-move {
-    0% { background-position: 100% 0%; }
-    100% { background-position: 0 0%; }
+    color: #808080; /* Màu xám cho placeholder */
 }
