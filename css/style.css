@@ -1,58 +1,61 @@
 /* Reset mặc định */
 body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height: 100%;
     overflow-x: hidden;
 }
 
-/* Phần header (chỉ để trang trí) */
+/* Phần header màu xanh */
 #header {
-    height: 300px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 310px;
     background-color: #ADD8E6;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-}
-
-/* Search bar container */
-#search-bar-container {
-    position: absolute;
-    top: 50px; /* Khoảng cách ban đầu từ trên cùng */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px; /* Chiều rộng ban đầu của search bar */
-    transition: all 0.3s ease; /* Để hiệu ứng chuyển đổi mượt mà */
+    transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
 /* Search bar */
+#search-bar-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 700px;
+    transition: all 0.3s ease;
+}
+
 #search-bar {
-    width: 100%;
-    height: 40px;
-    padding-left: 20px;
-    font-size: 16px;
+    width: 350px;
+    height: 50px;
     border: none;
-    border-radius: 20px;
+    border-radius: 70px;
+    padding-left: 40px;
+    font-size: 16px;
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease; /* Để hiệu ứng chuyển đổi mượt mà */
 }
 
-/* Khi thanh tìm kiếm cố định và thay đổi */
-.fixed {
-    position: fixed;
-    top: 50px; /* Cố định vị trí 50px từ trên cùng của màn hình */
+#search-bar::placeholder {
+    color: #808080;
+    font-style: normal;
+}
+
+#letter-a {
+    position: absolute;
+    top: 1500px;
     left: 50%;
     transform: translateX(-50%);
-    width: 400px !important; /* Mở rộng thanh tìm kiếm */
-}
-
-.fixed input {
-    border-radius: 0 !important; /* Bo góc thành vuông */
-}
-
-/* Nội dung trang để thử nghiệm scroll */
-#content {
-    margin-top: 400px; /* Để tạo khoảng cách cho nội dung cuộn */
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
 }
