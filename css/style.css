@@ -21,6 +21,7 @@ body, html {
 
 /* Search bar */
 #search-bar-container {
+    position: relative;
     display: flex;
     justify-content: center;
     top: 240px;
