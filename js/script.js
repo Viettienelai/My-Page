@@ -1,11 +1,19 @@
-window.addEventListener('scroll', function() {
-    var header = document.getElementById('header');
-    var headerHeight = header.offsetHeight; // Lấy chiều cao của header
-    var scrollPosition = window.scrollY; // Lấy vị trí cuộn hiện tại
+// Lấy phần tử search-bar-container
+const searchBarContainer = document.getElementById("search-bar-container");
+const searchBar = document.getElementById("search-bar");
 
-    // Tính toán độ mờ opacity dựa trên vị trí cuộn
-    var opacity = 1 - Math.min((scrollPosition - headerHeight + 100) / 100, 1);
-    
-    // Áp dụng độ mờ cho header
-    header.style.opacity = opacity;
+// Lắng nghe sự kiện cuộn
+window.addEventListener("scroll", () => {
+    // Lấy vị trí của search bar so với top
+    const scrollTop = window.scrollY;
+    const searchBarTop = searchBarContainer.getBoundingClientRect().top;
+
+    // Kiểm tra nếu vị trí scroll vượt qua 150px
+    if (scrollTop + 150 >= searchBarContainer.offsetTop) {
+        // Thêm lớp cố định
+        searchBarContainer.classList.add("fixed");
+    } else {
+        // Xóa lớp cố định
+        searchBarContainer.classList.remove("fixed");
+    }
 });

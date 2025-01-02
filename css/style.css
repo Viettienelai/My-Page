@@ -35,7 +35,7 @@ body, html {
 
 #search-bar {
     width: 350px;
-    height: 50px;
+    height: 0px;
     border: none;
     border-radius: 70px;
     padding-left: 40px;
@@ -48,6 +48,19 @@ body, html {
 #search-bar::placeholder {
     color: #808080;
     font-style: normal;
+}
+
+/* Khi thanh tìm kiếm cố định */
+.fixed {
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px !important;
+}
+
+.fixed input {
+    border-radius: 0 !important;
 }
 
 #letter-a {
