@@ -21,10 +21,10 @@ body {
 /* Thanh tìm kiếm */
 .search-bar {
     position: relative;
-    width: 300px; /* Độ rộng 300 đơn vị */
-    height: 50px; /* Chiều cao 50 đơn vị */
+    width: 400px; /* Độ rộng 300 đơn vị */
+    height: 40px; /* Chiều cao 50 đơn vị */
     background-color: #ADD8E6; /* Màu xanh biển nhạt */
-    border-radius: 10px; /* Bo tròn 10 đơn vị cho các góc */
+    border-radius: 100px; /* Bo tròn 10 đơn vị cho các góc */
     border: 1px solid #000000; /* Viền dày 1 đơn vị màu đen */
     display: flex;
     justify-content: center;
