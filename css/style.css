@@ -1,16 +1,24 @@
 /* Reset mặc định */
-body, html {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa trang */
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Đảm bảo các phần tử con không vượt quá 400px */
+* {
+    max-width: 400px;
+    box-sizing: border-box;
 }
 
 /* Phần header màu xanh */
 #header {
-    top: 0;
-    left: 0;
     width: 100%;
     height: 310px;
     background-color: #ADD8E6;
@@ -18,9 +26,10 @@ body, html {
     border-bottom-right-radius: 25px;
     transition: opacity 0.3s ease;
     z-index: 10;
+    position: relative;
 }
 
-/* Search bar */
+/* Search bar container */
 #search-bar-container {
     position: absolute;
     display: flex;
@@ -28,12 +37,14 @@ body, html {
     top: 240px;
     left: 50%;
     transform: translateX(-50%);
-    width: 900px;
+    width: 100%; /* Thay đổi từ 900px sang 100% */
+    height: 700px;
     transition: all 0.3s ease;
 }
 
+/* Search bar */
 #search-bar {
-    width: 350px;
+    width: 350px; /* Giữ nguyên chiều rộng ban đầu */
     height: 50px;
     border: none;
     border-radius: 70px;
@@ -42,20 +53,22 @@ body, html {
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 1s ease; /* Thêm hiệu ứng chuyển tiếp cho thanh tìm kiếm */
+    max-width: 100%; /* Đảm bảo không vượt quá chiều rộng của container */
 }
 
-#search-bar::placeholder {
-    color: #808080;
-    font-style: normal;
-}
-
+/* Các phần tử khác */
 #letter-a {
     position: absolute;
-    top: 1000px;
+    top: 1500px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 50px;
     font-weight: bold;
     color: red;
+}
+
+/* Responsive meta tag */
+@viewport {
+    width: 400px;
+    zoom: 1;
 }

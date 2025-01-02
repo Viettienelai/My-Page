@@ -1,23 +1,34 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=400, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>ViệtTiến┇ᴱᴸᴬᴵ</title>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        @media screen and (max-width: 400px) {
+            html, body {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+                overflow-x: hidden;
+            }
+        }
+    </style>
 </head>
-<body>
-    <div id="header"></div>
+  <body>
+      <div id="header">       
+      </div>
 
-    <div id="search-bar-container">
+      <div id="search-bar-container">
         <form action="https://www.google.com/search" method="get">
             <input type="text" id="search-bar" name="q" placeholder="Search9..." required>
         </form>
-    </div>
+      </div>
 
-    <div id="letter-a">A</div>
+      <div id="letter-a">A
+      </div>
 
-    <script src="js/script.js"></script>
-</body>
+      <script src="js/script.js"></script>
+  </body>
 </html>
