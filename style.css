@@ -21,11 +21,11 @@ body {
 /* Thanh tìm kiếm */
 .search-bar {
     position: relative;
-    width: 500px; /* Độ rộng 500 đơn vị */
-    height: 100px; /* Chiều cao 100 đơn vị */
+    width: 300px; /* Độ rộng 300 đơn vị */
+    height: 50px; /* Chiều cao 50 đơn vị */
     background-color: #ADD8E6; /* Màu xanh biển nhạt */
-    border-radius: 100%; /* Bo tròn 100% */
-    border: 10px solid #000000; /* Viền dày 10 đơn vị màu đen */
+    border-radius: 10px; /* Bo tròn 10 đơn vị cho các góc */
+    border: 1px solid #000000; /* Viền dày 1 đơn vị màu đen */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +45,4 @@ body {
 }
 
 /* Placeholder */
-.search-bar input::placeholder {
-    color: #808080; /* Màu xám cho placeholder */
-}
+.search-bar input::placeholder 
