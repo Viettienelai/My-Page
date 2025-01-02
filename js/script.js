@@ -1,48 +1,48 @@
-// Phần thay đổi header và search bar khi cuộn
-const header = document.getElementById('header');
-const searchBarContainer = document.getElementById('search-bar-container');
-const content = document.getElementById('content');
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    // Thay đổi độ mờ và vị trí của header
-    if (scrollY > 110) {
-        header.style.opacity = Math.max(0, 1 - (scrollY - 110) / 80);
-        document.body.classList.add('scrolled');
-    } else {
-        header.style.opacity = 1;
-        document.body.classList.remove('scrolled');
-    }
-});
-
-// Xử lý tìm kiếm Google
-const searchBar = document.getElementById('search-bar');
-searchBar.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        const query = searchBar.value.trim();
-        if (query) {
-            window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-        }
-    }
-});
-
-// Tải tin tức từ Google News API (thay YOUR_API_KEY bằng khóa API hợp lệ)
-async function fetchNews() {
-    const apiKey = '3bedd9928df34d2792927e58fd0b9406'; // Thay bằng API key thực tế của bạn
-    const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=${apiKey}`);
-    const data = await response.json();
-
+document.addEventListener('DOMContentLoaded', () => {
+    const apiKey = '3bedd9928df34d2792927e58fd0b9406'; // Thay thế bằng API key của bạn
     const newsContainer = document.getElementById('news-container');
-    newsContainer.innerHTML = data.articles
-        .map(article => `
-            <div class="news-article">
-                <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
-                <p>${article.description || 'No description available'}</p>
-            </div>
-        `)
-        .join('');
-}
+    const searchBar = document.getElementById('search-bar');
 
-// Gọi hàm fetchNews khi tải trang
-fetchNews();
+    // Hàm lấy tin tức
+    const fetchNews = async (query = '') => {
+        let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+        if (query) {
+            url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
+        }
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            displayNews(data.articles);
+        } catch (error) {
+            console.error('Lỗi khi lấy tin tức:', error);
+        }
+    };
+
+    // Hàm hiển thị tin tức
+    const displayNews = (articles) => {
+        newsContainer.innerHTML = '';
+        articles.forEach(article => {
+            const articleElement = document.createElement('div');
+            articleElement.classList.add('news-article');
+            articleElement.innerHTML = `
+                <h2>${article.title}</h2>
+                <p>${article.description || 'Không có mô tả.'}</p>
+                <a href="${article.url}" target="_blank">Đọc thêm</a>
+            `;
+            newsContainer.appendChild(articleElement);
+        });
+    };
+
+    // Lấy tin tức mặc định khi tải trang
+    fetchNews();
+
+    // Lấy tin tức khi người dùng nhập từ khóa tìm kiếm
+    searchBar.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const query = searchBar.value.trim();
+            if (query) {
+                fetchNews(query);
+            }
+        }
+    });
+});
