@@ -50,19 +50,6 @@ body, html {
     font-style: normal;
 }
 
-/* Khi thanh tìm kiếm cố định */
-.fixed {
-    position: fixed;
-    top: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px !important;
-}
-
-.fixed input {
-    border-radius: 0 !important;
-}
-
 #letter-a {
     position: absolute;
     top: 1500px;
