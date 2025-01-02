@@ -29,7 +29,6 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     width: 900px;
-    height: 700px;
     transition: all 0.3s ease;
 }
 
@@ -43,6 +42,7 @@ body, html {
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp cho thanh tìm kiếm */
 }
 
 #search-bar::placeholder {
