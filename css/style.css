@@ -28,8 +28,8 @@ body, html {
     top: 240px;
     left: 50%;
     transform: translateX(-50%);
-    width: 600px;
-    height: 60px;
+    width: 350px;
+    height: 50px;
     transition: all 0.3s ease;
 }
 
@@ -49,16 +49,6 @@ body, html {
 #search-bar::placeholder {
     color: #808080;
     font-style: normal;
-}
-
-.scrolled #search-bar-container {
-    top: 60px;
-    width: 400px;
-    height: 70px;
-}
-
-.scrolled #search-bar {
-    border-radius: 50px;
 }
 
 #letter-a {
