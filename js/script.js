@@ -1,18 +1,18 @@
-// Lấy phần tử thanh tìm kiếm và container của nó
+// Lấy phần tử search-bar-container
 const searchBarContainer = document.getElementById("search-bar-container");
 const searchBar = document.getElementById("search-bar");
 
-// Lắng nghe sự kiện cuộn
+// Lắng nghe sự kiện cuộn (scroll)
 window.addEventListener("scroll", () => {
-    // Vị trí cuộn của trang
+    // Lấy vị trí của search-bar-container so với trên cùng của trang
     const scrollTop = window.scrollY;
 
-    // Kiểm tra nếu thanh tìm kiếm đã đến vị trí cách top 150px
-    if (scrollTop + 150 >= searchBarContainer.offsetTop) {
-        // Thêm lớp cố định
+    // Kiểm tra nếu vị trí scroll vượt qua 50px
+    if (scrollTop >= 50) {
+        // Thêm lớp "fixed" khi người dùng cuộn đến vị trí đó
         searchBarContainer.classList.add("fixed");
     } else {
-        // Xóa lớp cố định
+        // Xóa lớp "fixed" khi người dùng cuộn lên trên
         searchBarContainer.classList.remove("fixed");
     }
 });
