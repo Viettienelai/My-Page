@@ -24,7 +24,7 @@ window.addEventListener('scroll', () => {
     }
 
     // Cập nhật thay đổi dựa trên progress
-    searchBar.style.width = (350 + 30 * progress) + 'px'; 
+    searchBar.style.width = (350 + 20 * progress) + 'px'; 
     searchBar.style.height = `${50 - 10 * progress}px`; 
     searchBar.style.borderRadius = `${20 - 5 * progress}px`;
     inside.style.width = (350 + 50 * progress) + 'px';
