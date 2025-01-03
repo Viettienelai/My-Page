@@ -74,6 +74,12 @@ body, html {
     font-style: normal;
 }
 
+#bar-inside-color { width: 300px;
+                    height: 40px;
+                    border-radius: 100px;
+                    color: #808080;
+                    transition: width 0.3s ease, border-radius 1s ease; }
+
 #letter-a {
     position: absolute;
     top: 1400px;
