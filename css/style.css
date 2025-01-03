@@ -59,9 +59,10 @@ body, html {
 /* Search bar */
 #search-bar {
     position: absolute;
-    width: 200px;
+    width: 350px;
     height: 50px;
     border-radius: 20px;
+    border: none;
     padding-left: 40px;
     font-size: 16px;
     outline: none;
