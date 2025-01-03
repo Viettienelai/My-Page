@@ -62,36 +62,29 @@ body, html {
     position: absolute; /* Chồng lên nhau với #bar-inside-color */
     width: 350px;
     height: 50px;
-    border: 2px solid green; /* Viền 2px màu xanh lá */
+    border: 2px solid rgb(255, 0, 0); /* Viền 2px màu xanh lá */
     border-radius: 20px;
     padding-left: 40px;
     font-size: 16px;
     outline: none;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: width 0.2s ease, border-radius 1s ease;
-    z-index: 6; 
+    z-index: 7; 
     left: 50%; /* Căn giữa */
     transform: translateX(-50%); /* Căn giữa */
-}
-
-/* Placeholder */
-#search-bar::placeholder {
-    color: #808080;
-    font-style: normal;
 }
 
 /* Bar inside */
 #bar-inside-color {
     position: absolute; /* Chồng lên #search-bar */
-    width: 300px;
-    height: 40px;
-    border-radius: 100px;
+    width: 350px;
+    height: 50px;
+    border-radius: 20px;
     background-color: #ffffff;
-    pointer-events: none;
-    border: 1px solid red; /* Viền 1px màu đỏ */
+    border: 1px solid rgb(0, 255, 81); /* Viền 1px màu đỏ */
     transition: width 0.3s ease, border-radius 1s ease;
-    z-index: 7;
+    z-index: 6;
     left: 50%; /* Căn giữa */
     transform: translateX(-50%); /* Căn giữa */
 }
