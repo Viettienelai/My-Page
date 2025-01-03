@@ -54,6 +54,7 @@ body, html {
     width: 400px;
     height: 50px;
     border: 0px solid red;
+    z-index: 5; 
 }
 
 #search-bar {
@@ -67,11 +68,13 @@ body, html {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: width 0.3s ease, border-radius 1s ease;
+    z-index: 6; 
 }
 
 #search-bar::placeholder {
     color: #808080;
     font-style: normal;
+    z-index: 8; 
 }
 
 #letter-a {
