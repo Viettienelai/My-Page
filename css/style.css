@@ -43,7 +43,6 @@ body, html {
     height: 50px;
     border: 3px solid red; /* Viền 3px màu đỏ cho container */
     border-radius: 70px;
-    transition: all 0.5s ease; /* Thêm hiệu ứng mượt mà */
 }
 
 #search-bar {

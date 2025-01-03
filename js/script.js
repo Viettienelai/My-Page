@@ -8,7 +8,7 @@ const SCROLL_PHASE_TWO = 1000; // Giai đoạn tiếp theo đến 1000px
 
 const INITIAL_TOP = 240; // Vị trí ban đầu
 const TARGET_TOP = 250; // Mục tiêu của top ở giai đoạn đầu
-const FINAL_TOP = 1250; // Mục tiêu top ở giai đoạn cuối (sau 240px cuộn)
+const FINAL_TOP = 1000; // Mục tiêu top ở giai đoạn cuối (sau 240px cuộn)
 
 const INITIAL_WIDTH = 350; // Chiều rộng ban đầu của search bar
 const TARGET_WIDTH = 400; // Chiều rộng mục tiêu ở giai đoạn đầu
