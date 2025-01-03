@@ -1,3 +1,48 @@
+/* Reset mặc định */
+body, html {
+    height: 1500px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Phần header */
+#header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    background-color: #FBE3BF;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* Định dạng video trong header */
+#header-video {
+    position: absolute;
+    top: 30px;
+    left: 55%;
+    transform: translateX(-55%);
+    width: 250px;
+    height: 250px;
+    z-index: 3; /* Đặt video dưới các phần tử khác trong header */
+}
+
+/* Lớp trong suốt cha */
+#overlay {
+    position: fixed; 
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0);
+    z-index: 4; 
+}
+
 /* Search bar container */
 #search-bar-container {
     position: relative; /* Đảm bảo các phần tử con có thể sử dụng absolute */
@@ -36,11 +81,58 @@
     width: 300px;
     height: 40px;
     border-radius: 100px;
-    color: #777777;
+    color: #808080;
     pointer-events: none;
     border: 1px solid red; /* Viền 1px màu đỏ */
     transition: width 0.3s ease, border-radius 1s ease;
     z-index: 7;
     left: 50%; /* Căn giữa */
     transform: translateX(-50%); /* Căn giữa */
+}
+
+
+/* Placeholder */
+#search-bar::placeholder {
+    color: #808080;
+    font-style: normal;
+    z-index: 8; 
+}
+
+/* Text letter A */
+#letter-a {
+    position: absolute;
+    top: 1400px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+}
+
+/* Ruler */
+#ruler {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+}
+
+#ruler::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 100px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 9px,
+        black 9px,
+        black 10px
+    );
 }
