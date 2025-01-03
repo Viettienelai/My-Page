@@ -20,17 +20,28 @@ body, html {
     z-index: 10;
 }
 
+/* Lớp trong suốt cha */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 /* Search bar */
 #search-bar-container {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     top: 240px;
     left: 50%;
     transform: translateX(-50%);
     width: 400px;
-    height: 200px;
-    transition: all 0.3s ease;
+    height: 50px;
+    transition: all 1s ease;
 }
 
 #search-bar {
@@ -61,7 +72,7 @@ body, html {
 }
 
 #ruler {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
