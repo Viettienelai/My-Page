@@ -12,11 +12,11 @@ window.addEventListener('scroll', () => {
         searchBarContainer.style.top = 290 - scrollTop + 'px';
     } else {
         // Nếu vị trí cuộn lớn hơn 290px, giữ container ở vị trí 0px
-        searchBarContainer.style.top = '0px';
+        searchBarContainer.style.top = '-10px';
     }
 
     // Tính toán tỷ lệ thay đổi hiệu ứng (từ 0 đến 1)
-    const progress = Math.min(scrollTop / 290, 1);
+    const progress = Math.min(scrollTop / 300, 1);
 
     // Cập nhật border-radius và width của thanh tìm kiếm
     searchBar.style.borderRadius = `${20 - 20 * progress}px`;
