@@ -7,16 +7,13 @@ window.addEventListener('scroll', () => {
     // Lấy vị trí cuộn trang
     const scrollTop = window.scrollY;
 
-    // Tính toán dịch chuyển của container theo chiều dọc (Y)
-    let translateYValue = Math.max(290 - scrollTop, 0);
-    
-    // Tính toán dịch chuyển của container theo chiều ngang (X)
-    const windowWidth = window.innerWidth;
-    const containerWidth = searchBarContainer.offsetWidth;
-    const translateXValue = (windowWidth - containerWidth) / 2; // Căn giữa container theo chiều ngang
-    
-    // Áp dụng transform translateY và translateX
-    searchBarContainer.style.transform = `translateY(${translateYValue}px) translateX(${translateXValue}px)`;
+    // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 290px, di chuyển container lên
+    if (scrollTop <= 290) {
+        searchBarContainer.style.top = 290 - scrollTop + 'px';
+    } else {
+        // Nếu vị trí cuộn lớn hơn 290px, giữ container ở vị trí 0px
+        searchBarContainer.style.top = '0px';
+    }
 
     // Tính toán tỷ lệ thay đổi hiệu ứng (từ 0 đến 1)
     const progress = Math.min(scrollTop / 290, 1);
