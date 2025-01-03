@@ -7,8 +7,8 @@ window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
 
     // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 240px, di chuyển container lên
-    if (scrollTop <= 240) {
-        searchBarContainer.style.top = 240 - scrollTop + 'px';
+    if (scrollTop <= 290) {
+        searchBarContainer.style.top = 290 - scrollTop + 'px';
     }
     // Nếu vị trí cuộn lớn hơn 240px, giữ container ở vị trí 240px
     else {
