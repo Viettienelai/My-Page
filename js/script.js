@@ -26,24 +26,23 @@ function handleScroll() {
         const progress = scrollY / SCROLL_PHASE_ONE; // Tiến độ từ 0 đến 1
 
         // Tính toán giá trị mới
-        const newTranslateY = (TARGET_TOP - INITIAL_TOP) * progress;
+        const newTop = INITIAL_TOP + (TARGET_TOP - INITIAL_TOP) * progress;
         const newWidth = INITIAL_WIDTH + (TARGET_WIDTH - INITIAL_WIDTH) * progress;
         const newRadius = INITIAL_RADIUS + (TARGET_RADIUS - INITIAL_RADIUS) * progress;
 
         // Áp dụng các thay đổi
-        searchBarContainer.style.transform = `translateY(${newTranslateY}px)`;
+        searchBarContainer.style.top = `${newTop}px`;
         searchBar.style.width = `${newWidth}px`;
         searchBar.style.borderRadius = `${newRadius}px`;
     } else if (scrollY > SCROLL_PHASE_ONE && scrollY <= SCROLL_PHASE_TWO) {
         // Giai đoạn 2: Di chuyển container dựa trên scroll từ 240px đến 1000px
         const progress = (scrollY - SCROLL_PHASE_ONE) / (SCROLL_PHASE_TWO - SCROLL_PHASE_ONE); // Tiến độ từ 0 đến 1
 
-        // Tính toán translateY trong giai đoạn 2
-        const initialTranslateY = TARGET_TOP - INITIAL_TOP;
-        const additionalTranslateY = (FINAL_TOP - TARGET_TOP) * progress;
+        // Tính toán top trong giai đoạn 2
+        const newTop = TARGET_TOP + (FINAL_TOP - TARGET_TOP) * progress;
 
         // Áp dụng các thay đổi
-        searchBarContainer.style.transform = `translateY(${initialTranslateY + additionalTranslateY}px)`;
+        searchBarContainer.style.top = `${newTop}px`;
     }
 }
 
@@ -60,7 +59,3 @@ function optimizedScroll() {
 
 // Đăng ký sự kiện cuộn
 window.addEventListener('scroll', optimizedScroll, { passive: true });
-
-// Thêm CSS transition để mượt mà
-searchBarContainer.style.transition = 'transform 0.3s ease';
-searchBar.style.transition = 'width 0.3s ease, border-radius 0.3s ease';
