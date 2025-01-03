@@ -35,7 +35,8 @@ function handleScrollEffect() {
             // Chuyển sang trạng thái cố định
             searchBarContainer.style.position = 'fixed';
             searchBarContainer.style.top = `${FIXED_POSITION_TOP}px`;
-            
+            searchBarContainer.style.transform = 'translateY(0)'; // Đặt lại vị trí
+
             // Thay đổi thuộc tính của thanh tìm kiếm
             searchBar.style.width = `${EXPANDED_WIDTH}px`;
             searchBar.style.borderRadius = '0';
@@ -48,7 +49,8 @@ function handleScrollEffect() {
         // Trở về trạng thái ban đầu
         searchBarContainer.style.position = 'absolute';
         searchBarContainer.style.top = `${INITIAL_TOP}px`;
-        
+        searchBarContainer.style.transform = 'translateY(0)'; // Đặt lại vị trí
+
         // Khôi phục thuộc tính ban đầu
         searchBar.style.width = `${INITIAL_WIDTH}px`;
         searchBar.style.borderRadius = '70px';
@@ -74,5 +76,5 @@ function optimizedScroll() {
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
 // Thêm hiệu ứng chuyển động mượt
-searchBarContainer.style.transition = 'all 1s ease';
-searchBar.style.transition = 'all 1s ease';
+searchBarContainer.style.transition = 'top 0.3s ease, transform 0.3s ease';
+searchBar.style.transition = 'width 0.3s ease, border-radius 0.3s ease';
