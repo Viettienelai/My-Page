@@ -52,14 +52,14 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     width: 400px;
-    height: 50px;
+    height: 60px;
     border: 0px solid red;
     transition: width 1s ease;
 }
 
 #search-bar {
     width: 350px;
-    height: 50px;
+    height: 60px;
     border: 0px solid black; /* Viền 1px màu đen cho search bar */
     border-radius: 20px;
     padding-left: 40px;
