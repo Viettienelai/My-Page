@@ -9,66 +9,33 @@ const EXPANDED_WIDTH = 400; // Chiều rộng khi mở rộng
 const INITIAL_TOP = 240; // Vị trí ban đầu của container
 
 // Trạng thái của thanh tìm kiếm
-let searchBarState = {
-    isFixed: false,
-    initialScrollPosition: 0
-};
+let isFixed = false;
 
-// Hàm xử lý sự kiện cuộn
+// Hàm xử lý hiệu ứng cuộn
 function handleScrollEffect() {
-    // Lấy vị trí cuộn hiện tại
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Tính toán vị trí của container search bar so với đỉnh trang
-    const searchBarContainerTop = searchBarContainer.getBoundingClientRect().top + scrollTop;
+    if (!isFixed && scrollTop > INITIAL_TOP - FIXED_POSITION_TOP) {
+        // Khi cuộn xuống và thanh tìm kiếm cần cố định
+        isFixed = true;
 
-    // Kiểm tra hướng cuộn
-    const isScrollingDown = scrollTop > searchBarState.initialScrollPosition;
-    const isScrollingUp = scrollTop < searchBarState.initialScrollPosition;
+        searchBarContainer.style.transform = `translateY(${FIXED_POSITION_TOP - INITIAL_TOP}px)`;
+        searchBar.style.width = `${EXPANDED_WIDTH}px`;
+        searchBar.style.borderRadius = '20px';
+    } else if (isFixed && scrollTop <= INITIAL_TOP - FIXED_POSITION_TOP) {
+        // Khi cuộn lên và thanh tìm kiếm trở về trạng thái ban đầu
+        isFixed = false;
 
-    // Điều kiện cố định thanh tìm kiếm khi cuộn xuống
-    if (isScrollingDown && scrollTop >= searchBarContainerTop - FIXED_POSITION_TOP) {
-        if (!searchBarState.isFixed) {
-            // Lưu vị trí cuộn ban đầu
-            searchBarState.initialScrollPosition = scrollTop;
-
-            // Chuyển sang trạng thái cố định
-            searchBarContainer.style.position = 'fixed';
-            searchBarContainer.style.top = `${FIXED_POSITION_TOP}px`;
-            searchBarContainer.style.transform = 'translateY(0)'; // Đặt lại vị trí
-
-            // Thay đổi thuộc tính của thanh tìm kiếm
-            searchBar.style.width = `${EXPANDED_WIDTH}px`;
-            searchBar.style.borderRadius = '0';
-            
-            searchBarState.isFixed = true;
-        }
-    } 
-    // Điều kiện đảo ngược khi cuộn lên
-    else if (isScrollingUp && searchBarState.isFixed) {
-        // Trở về trạng thái ban đầu
-        searchBarContainer.style.position = 'absolute';
-        searchBarContainer.style.top = `${INITIAL_TOP}px`;
-        searchBarContainer.style.transform = 'translateY(0)'; // Đặt lại vị trí
-
-        // Khôi phục thuộc tính ban đầu
+        searchBarContainer.style.transform = `translateY(0)`;
         searchBar.style.width = `${INITIAL_WIDTH}px`;
         searchBar.style.borderRadius = '70px';
-        
-        searchBarState.isFixed = false;
-        searchBarState.initialScrollPosition = scrollTop;
     }
 }
 
 // Tối ưu hóa sự kiện cuộn với requestAnimationFrame
 let scrollRAF;
 function optimizedScroll() {
-    // Hủy animation frame trước đó nếu tồn tại
-    if (scrollRAF) {
-        cancelAnimationFrame(scrollRAF);
-    }
-    
-    // Đăng ký animation frame mới
+    if (scrollRAF) cancelAnimationFrame(scrollRAF);
     scrollRAF = requestAnimationFrame(handleScrollEffect);
 }
 
@@ -76,5 +43,5 @@ function optimizedScroll() {
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
 // Thêm hiệu ứng chuyển động mượt
-searchBarContainer.style.transition = 'top 0.3s ease, transform 0.3s ease';
+searchBarContainer.style.transition = 'transform 0.3s ease';
 searchBar.style.transition = 'width 0.3s ease, border-radius 0.3s ease';
