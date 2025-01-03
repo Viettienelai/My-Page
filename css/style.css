@@ -17,19 +17,19 @@ body, html {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     transition: opacity 0.3s ease;
-    z-index: 10;
+    z-index: 2;
 }
 
 /* Lớp trong suốt cha */
 #overlay {
-    position: fixed; /* Thay đổi thành fixed */
-    top: 0; /* Gắn phần tử vào đầu màn hình */
-    left: 50%; /* Căn giữa theo chiều ngang */
-    transform: translateX(-50%); /* Giữ phần tử luôn căn giữa */
+    position: fixed; 
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 400px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
-    z-index: 20; /* Đảm bảo overlay nằm trên các phần tử khác */
+    z-index: 3; 
 }
 
 
@@ -44,8 +44,6 @@ body, html {
     width: 400px;
     height: 50px;
     border: 3px solid red; /* Viền 3px màu đỏ cho container */
-    transition: all 0s ease; /* Thêm hiệu ứng mượt mà */
-}
 
 #search-bar {
     width: 350px;
