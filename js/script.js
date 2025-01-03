@@ -8,17 +8,15 @@ const SCROLL_PHASE_TWO = 1000; // Giai đoạn tiếp theo đến 1000px
 
 const INITIAL_TOP = 240; // Vị trí ban đầu
 const TARGET_TOP = 250; // Mục tiêu của top ở giai đoạn đầu
-const FINAL_TOP = 1000; // Mục tiêu top ở giai đoạn cuối (sau 240px cuộn)
+const FINAL_TOP = 250; // Mục tiêu top cố định khi phase 2 bắt đầu
 
 const INITIAL_WIDTH = 350; // Chiều rộng ban đầu của search bar
 const TARGET_WIDTH = 400; // Chiều rộng mục tiêu ở giai đoạn đầu
 const INITIAL_RADIUS = 70; // Border-radius ban đầu
 const TARGET_RADIUS = 0; // Border-radius mục tiêu
 
-let scrollRAF; // Biến để lưu trữ requestAnimationFrame
-
-// Hàm xử lý di chuyển
-function handleScroll() {
+// Xử lý sự kiện scroll
+window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
     if (scrollY <= SCROLL_PHASE_ONE) {
@@ -39,23 +37,14 @@ function handleScroll() {
         const progress = (scrollY - SCROLL_PHASE_ONE) / (SCROLL_PHASE_TWO - SCROLL_PHASE_ONE); // Tiến độ từ 0 đến 1
 
         // Tính toán top trong giai đoạn 2
-        const newTop = TARGET_TOP + (FINAL_TOP - TARGET_TOP) * progress;
+        const newTop = FINAL_TOP; // Giữ vị trí cố định tại top 250px
 
         // Áp dụng các thay đổi
+        searchBarContainer.style.position = 'fixed'; // Gắn cố định container
         searchBarContainer.style.top = `${newTop}px`;
+    } else {
+        // Sau khi cuộn hết trang, giữ vị trí cố định
+        searchBarContainer.style.position = 'fixed'; // Giữ cố định
+        searchBarContainer.style.top = `${FINAL_TOP}px`; // Vị trí cố định tại top 250px
     }
-}
-
-// Tối ưu hóa sự kiện cuộn với requestAnimationFrame
-function optimizedScroll() {
-    // Hủy bỏ các animation frame trước đó
-    if (scrollRAF) {
-        cancelAnimationFrame(scrollRAF);
-    }
-
-    // Đăng ký animation frame mới
-    scrollRAF = requestAnimationFrame(handleScroll);
-}
-
-// Đăng ký sự kiện cuộn
-window.addEventListener('scroll', optimizedScroll, { passive: true });
+});
