@@ -90,12 +90,10 @@ body, html {
     transform: translateX(-50%); /* Căn giữa */
 }
 
-
 /* Placeholder */
 #search-bar::placeholder {
     color: #808080;
     font-style: normal;
-    z-index: 8; 
 }
 
 /* Text letter A */
