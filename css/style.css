@@ -45,7 +45,7 @@ body, html {
 
 /* Search bar */
 #search-bar-container {
-    position: relative;
+    position: ;
     display: flex;
     justify-content: center;
     top: 290px;
