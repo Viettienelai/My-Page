@@ -28,7 +28,7 @@ body, html {
     transform: translateX(-55%);
     width: 250px;
     height: 250px;
-    z-index: 3; /* Đặt video dưới các phần tử khác trong header */
+    z-index: 3;
 }
 
 /* Lớp trong suốt cha */
@@ -45,7 +45,7 @@ body, html {
 
 /* Search bar container */
 #search-bar-container {
-    position: relative; /* Đảm bảo các phần tử con có thể sử dụng absolute */
+    position: relative;
     display: flex;
     justify-content: center;
     top: 290px;
@@ -53,16 +53,14 @@ body, html {
     transform: translateX(-50%);
     width: 400px;
     height: 50px;
-    border: 3px solid red; /* Viền 3px màu đỏ */
     z-index: 5; 
 }
 
 /* Search bar */
 #search-bar {
-    position: absolute; /* Chồng lên nhau với #bar-inside-color */
+    position: absolute;
     width: 350px;
     height: 50px;
-    border: 2px solid rgb(255, 0, 0); /* Viền 2px màu xanh lá */
     border-radius: 20px;
     padding-left: 40px;
     font-size: 16px;
@@ -71,22 +69,21 @@ body, html {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: width 0.2s ease, border-radius 1s ease;
     z-index: 7; 
-    left: 50%; /* Căn giữa */
-    transform: translateX(-50%); /* Căn giữa */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Bar inside */
 #bar-inside-color {
-    position: absolute; /* Chồng lên #search-bar */
+    position: absolute;
     width: 350px;
     height: 50px;
     border-radius: 20px;
-    background-color: #ffffff;
-    border: 1px solid rgb(0, 255, 81); /* Viền 1px màu đỏ */
+    background-color: #FBE3BF;
     transition: width 0.3s ease, border-radius 0.4s ease;
     z-index: 6;
-    left: 50%; /* Căn giữa */
-    transform: translateX(-50%); /* Căn giữa */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
