@@ -1,13 +1,17 @@
-// Lấy phần tử container cần thay đổi vị trí
+// Get reference to the search bar container
 const searchBarContainer = document.getElementById('search-bar-container');
 
-// Xử lý sự kiện cuộn trang
-window.addEventListener('scroll', function() {
+// Add scroll event listener to window
+window.addEventListener('scroll', () => {
+    // Get the scroll position
     const scrollTop = window.scrollY;
-    // Điều chỉnh vị trí cho phần tử di chuyển lên xuống khi cuộn
-    if (scrollTop >= 240) {
-        searchBarContainer.style.transform = 'translate(-50%, -240px)'; // Điều chỉnh vị trí lên cao hơn
-    } else {
-        searchBarContainer.style.transform = `translate(-50%, ${scrollTop - 240}px)`; // Giảm xuống từ vị trí ban đầu
+
+    // If scroll position is between 0 and 240px, move the container up
+    if (scrollTop <= 240) {
+        searchBarContainer.style.top = 240 - scrollTop + 'px';
+    }
+    // If the scroll position is more than 240px, keep the container at 240px
+    else {
+        searchBarContainer.style.top = '0px';
     }
 });
