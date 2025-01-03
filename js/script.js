@@ -2,7 +2,6 @@
 const searchBar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
 const searchBarContainer = document.getElementById('search-bar-container');
-const header = document.getElementById('header');
 
 // Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
 window.addEventListener('scroll', () => {
@@ -26,7 +25,8 @@ window.addEventListener('scroll', () => {
     // Cập nhật thay đổi dựa trên progress
     searchBar.style.width = 350 + 30 * progress;
     searchBar.style.height = `${50 - 10 * progress}px`;
+    searchBar.style.border-radius = 20 - 10 * progress;
     inside.style.width = 350 + 50 * progress;
-    inside.style.backgroundColor = `rgb(${255 - 4 * progress2}, ${255 - 28 * progress2}, ${255 - 64 * progress2})`;
-    header.style.opacity = 1 - progress2;
+    inside.style.backgroundColor = `rgb(${255 - 4 * progress}, ${255 - 28 * progress}, ${255 - 64 * progress})`;
+    inside.style.border-radius = 20 - 20 * progress;
 });
