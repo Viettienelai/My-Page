@@ -8,15 +8,15 @@ window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
 
     // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 290px, di chuyển container lên
-    if (scrollTop <= 280) {
-        searchBarContainer.style.top = 280 - scrollTop + 'px';
+    if (scrollTop <= 290) {
+        searchBarContainer.style.top = 290 - scrollTop + 'px';
     } else {
         // Nếu vị trí cuộn lớn hơn 290px, giữ container ở vị trí 0px
         searchBarContainer.style.top = '0px';
     }
 
     // Tính toán tỷ lệ thay đổi hiệu ứng (từ 0 đến 1)
-    const progress = Math.min(scrollTop / 280, 1);
+    const progress = Math.min(scrollTop / 290, 1);
 
     // Cập nhật border-radius và width của thanh tìm kiếm
     searchBar.style.borderRadius = `${20 - 20 * progress}px`;
