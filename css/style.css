@@ -79,13 +79,13 @@ body, html {
 #search-bar::placeholder {
     color: #808080;
     font-style: normal;
+}
 
 /* Bar inside */
 #bar-inside-color {
     position: absolute; /* Chồng lên #search-bar */
     width: 300px;
     height: 40px;
-    top: 10px;
     border-radius: 100px;
     background-color: #ffffff;
     pointer-events: none;
