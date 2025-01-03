@@ -1,50 +1,30 @@
-// Lấy các phần tử
-const searchBarContainer = document.getElementById('search-bar-container');
+// Lấy các phần tử cần thay đổi
+const container = document.getElementById('search-bar-container');
 const searchBar = document.getElementById('search-bar');
 
-// Cấu hình các giai đoạn
-const SCROLL_PHASE_ONE = 240; // Giai đoạn đầu đến 240px
-const SCROLL_PHASE_TWO = 1000; // Giai đoạn tiếp theo đến 1000px
+// Thêm sự kiện lắng nghe scroll
+window.addEventListener('scroll', function() {
+    let scrollPosition = window.scrollY;
 
-const INITIAL_TOP = 240; // Vị trí ban đầu
-const TARGET_TOP = 250; // Mục tiêu của top ở giai đoạn đầu
-const FINAL_TOP = 250; // Mục tiêu top cố định khi phase 2 bắt đầu
+    // Giai đoạn 1: Khi scroll từ 0px đến 240px
+    if (scrollPosition <= 240) {
+        let topValue = 250 * (scrollPosition / 240); // Tính toán top thay đổi dần
+        let widthValue = 400 * (scrollPosition / 240); // Tính toán width thay đổi dần
+        let borderRadiusValue = 70 - (70 * (scrollPosition / 240)); // Tính toán border-radius thay đổi dần
 
-const INITIAL_WIDTH = 350; // Chiều rộng ban đầu của search bar
-const TARGET_WIDTH = 400; // Chiều rộng mục tiêu ở giai đoạn đầu
-const INITIAL_RADIUS = 70; // Border-radius ban đầu
-const TARGET_RADIUS = 0; // Border-radius mục tiêu
-
-// Xử lý sự kiện scroll
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY <= SCROLL_PHASE_ONE) {
-        // Giai đoạn 1: Thay đổi dần vị trí và kích thước
-        const progress = scrollY / SCROLL_PHASE_ONE; // Tiến độ từ 0 đến 1
-
-        // Tính toán giá trị mới
-        const newTop = INITIAL_TOP + (TARGET_TOP - INITIAL_TOP) * progress;
-        const newWidth = INITIAL_WIDTH + (TARGET_WIDTH - INITIAL_WIDTH) * progress;
-        const newRadius = INITIAL_RADIUS + (TARGET_RADIUS - INITIAL_RADIUS) * progress;
-
-        // Áp dụng các thay đổi
-        searchBarContainer.style.top = `${newTop}px`;
-        searchBar.style.width = `${newWidth}px`;
-        searchBar.style.borderRadius = `${newRadius}px`;
-    } else if (scrollY > SCROLL_PHASE_ONE && scrollY <= SCROLL_PHASE_TWO) {
-        // Giai đoạn 2: Di chuyển container dựa trên scroll từ 240px đến 1000px
-        const progress = (scrollY - SCROLL_PHASE_ONE) / (SCROLL_PHASE_TWO - SCROLL_PHASE_ONE); // Tiến độ từ 0 đến 1
-
-        // Tính toán top trong giai đoạn 2
-        const newTop = FINAL_TOP; // Giữ vị trí cố định tại top 250px
-
-        // Áp dụng các thay đổi
-        searchBarContainer.style.position = 'fixed'; // Gắn cố định container
-        searchBarContainer.style.top = `${newTop}px`;
-    } else {
-        // Sau khi cuộn hết trang, giữ vị trí cố định
-        searchBarContainer.style.position = 'fixed'; // Giữ cố định
-        searchBarContainer.style.top = `${FINAL_TOP}px`; // Vị trí cố định tại top 250px
+        // Áp dụng các thay đổi vào container và search bar
+        container.style.top = topValue + 'px';
+        container.style.width = widthValue + 'px';
+        searchBar.style.width = (widthValue - 50) + 'px'; // Giảm 50px cho search bar để tạo khoảng cách
+        searchBar.style.borderRadius = borderRadiusValue + 'px';
+    }
+    // Giai đoạn 2: Khi scroll từ 240px đến 1000px
+    else if (scrollPosition > 240 && scrollPosition <= 1000) {
+        let translateYValue = (scrollPosition - 240) * (1000 / 760); // Tính toán translateY thay đổi từ 0px đến 1000px
+        container.style.transform = `translateY(${translateYValue}px)`;
+    }
+    // Reset khi scroll vượt quá 1000px
+    else {
+        container.style.transform = `translateY(1000px)`;
     }
 });

@@ -87,7 +87,7 @@ body, html {
     content: '';
     position: absolute;
     top: 0;
-    left: -50px; /* Đặt vạch ngang 100px nằm chính giữa vạch dọc */
+    left: -50px;
     width: 100px;
     height: 100%;
     background: repeating-linear-gradient(
