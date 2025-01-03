@@ -59,3 +59,30 @@ body, html {
     font-weight: bold;
     color: red;
 }
+
+#ruler {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 100%;
+    background-color: black;
+    z-index: 1000; /* Luôn hiển thị trên cùng */
+}
+
+#ruler::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 9px,
+        black 9px,
+        black 10px
+    );
+}
