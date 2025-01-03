@@ -7,23 +7,29 @@ window.addEventListener('scroll', () => {
     // Lấy vị trí cuộn trang
     const scrollTop = window.scrollY;
 
-    // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 290px, di chuyển container lên
+    // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 300px, di chuyển container lên
     if (scrollTop <= 300) {
         searchBarContainer.style.top = 290 - scrollTop + 'px';
     } else {
-        // Nếu vị trí cuộn lớn hơn 290px, giữ container ở vị trí 0px
+        // Nếu vị trí cuộn lớn hơn 300px, giữ container ở vị trí cố định
         searchBarContainer.style.top = '-10px';
     }
 
     // Tính toán tỷ lệ thay đổi hiệu ứng (từ 0 đến 1)
-    const progress = Math.min(scrollTop / 300, 1);
+    const progress1 = Math.min(scrollTop / 300, 1);
 
-    // Cập nhật border-radius và width của thanh tìm kiếm
-    searchBar.style.borderRadius = `${20 - 20 * progress}px`;
-    searchBar.style.width = `${350 + 50 * progress}px`;
-    searchBar.style.height = `${50 + 10 * progress}px`;
+    // Cập nhật border-radius, width và height của thanh tìm kiếm
+    const newWidth = 350 + 50 * progress1; // Tính width dựa trên progress1
+    searchBar.style.borderRadius = `${20 - 20 * progress1}px`;
+    searchBar.style.width = `${newWidth}px`;
+    searchBar.style.height = `${50 + 10 * progress1}px`;
 
-    // Thêm hiệu ứng chuyển đổi màu nền thanh tìm kiếm
-    const newColor = `rgb(${255 - (4 * progress)}, ${255 - (28 * progress)}, ${255 - (64 * progress)})`;
-    searchBar.style.backgroundColor = newColor;
+    // Chỉ thay đổi màu nền nếu width của searchBar đạt đúng 400px
+    if (scrollTop >= 260) {
+    const progress2 = Math.min((scrollTop - 260) / 40, 1);
+    } else {
+        const progress2 = 0;
+    }
+        const newColor = `rgb(${255 - (4 * progress2)}, ${255 - (28 * progress2)}, ${255 - (64 * progress2)})`;
+        searchBar.style.backgroundColor = newColor;
 });
