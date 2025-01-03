@@ -1,16 +1,16 @@
-// Get reference to the search bar container
+// Lấy tham chiếu đến container của thanh tìm kiếm
 const searchBarContainer = document.getElementById('search-bar-container');
 
-// Add scroll event listener to window
+// Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
 window.addEventListener('scroll', () => {
-    // Get the scroll position
+    // Lấy vị trí cuộn trang
     const scrollTop = window.scrollY;
 
-    // If scroll position is between 0 and 240px, move the container up
+    // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 240px, di chuyển container lên
     if (scrollTop <= 240) {
         searchBarContainer.style.top = 240 - scrollTop + 'px';
     }
-    // If the scroll position is more than 240px, keep the container at 240px
+    // Nếu vị trí cuộn lớn hơn 240px, giữ container ở vị trí 240px
     else {
         searchBarContainer.style.top = '0px';
     }
