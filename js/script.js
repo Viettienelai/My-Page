@@ -19,6 +19,6 @@ window.addEventListener('scroll', () => {
     const progress = Math.min(scrollTop / 290, 1);
 
     // Cập nhật border-radius và width của thanh tìm kiếm
-    searchBar.style.borderRadius = `${2 - 2 * progress}px`;
+    searchBar.style.borderRadius = `${20 - 20 * progress}px`;
     searchBar.style.width = `${350 + 50 * progress}px`;
 });
