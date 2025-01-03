@@ -1,6 +1,7 @@
 // Lấy tham chiếu đến thanh tìm kiếm và container
 const searchBar = document.getElementById('search-bar');
 const searchBarContainer = document.getElementById('search-bar-container');
+const newColor = `rgb(${255 - (255 * progress)}, ${227 + (28 * progress)}, ${191 + (48 * progress)})`;
 
 // Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
 window.addEventListener('scroll', () => {
@@ -22,4 +23,5 @@ window.addEventListener('scroll', () => {
     searchBar.style.borderRadius = `${20 - 20 * progress}px`;
     searchBar.style.width = `${350 + 50 * progress}px`;
     searchBar.style.height = `${50 + 10 * progress}px`;
+    searchBar.style.backgroundColor = newColor;
 });
