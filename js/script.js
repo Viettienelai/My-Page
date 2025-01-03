@@ -1,22 +1,39 @@
-window.addEventListener('scroll', function() {
+// Lấy các phần tử
+const searchBarContainer = document.getElementById('search-bar-container');
+const searchBar = document.getElementById('search-bar');
+
+
+// Cấu hình các giai đoạn
+const SCROLL_PHASE_ONE = 240; // Giai đoạn đầu đến 240px
+
+
+const INITIAL_TOP = 240; // Vị trí ban đầu
+const TARGET_TOP = 0; // Mục tiêu của top ở giai đoạn đầu
+const INITIAL_WIDTH = 350; // Chiều rộng ban đầu của search bar
+const TARGET_WIDTH = 400; // Chiều rộng mục tiêu ở giai đoạn đầu
+const INITIAL_RADIUS = 70; // Border-radius ban đầu
+const TARGET_RADIUS = 0; // Border-radius mục tiêu
+
+
+// Xử lý sự kiện scroll
+window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    
-    const container = document.getElementById('search-bar-container');
-    const searchBar = document.getElementById('search-bar');
 
-    // Thay đổi top của container và width của search bar dựa trên scroll
-    if (scrollY <= 240) {
-        // Tính toán tỷ lệ thay đổi
-        const topValue = (scrollY / 240) * 240;
-        const widthValue = 400 + (scrollY / 240) * (350 - 400); // Từ 400px tới 350px
-        const borderRadiusValue = (scrollY / 240) * 50; // Từ 50px tới 0px
 
-        container.style.top = `${topValue}px`;
-        container.style.width = `${widthValue}px`;
-        container.style.borderRadius = `${borderRadiusValue}px`;
+    if (scrollY <= SCROLL_PHASE_ONE) {
+        // Giai đoạn 1: Thay đổi dần vị trí và kích thước
+        const progress = scrollY / SCROLL_PHASE_ONE; // Tiến độ từ 0 đến 1
 
-        // Cập nhật độ rộng và border radius cho search bar
-        searchBar.style.width = `${widthValue - 50}px`; // Giảm bớt padding của search bar
-        searchBar.style.borderRadius = `${borderRadiusValue}px`;
+
+        // Tính toán giá trị mới
+        const newTop = INITIAL_TOP + (TARGET_TOP - INITIAL_TOP) * progress;
+        const newWidth = INITIAL_WIDTH + (TARGET_WIDTH - INITIAL_WIDTH) * progress;
+        const newRadius = INITIAL_RADIUS + (TARGET_RADIUS - INITIAL_RADIUS) * progress;
+
+
+        // Áp dụng các thay đổi
+        searchBarContainer.style.top = `${newTop}px`;
+        searchBar.style.width = `${newWidth}px`;
+        searchBar.style.borderRadius = `${newRadius}px`;
     }
 });
