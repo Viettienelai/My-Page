@@ -23,7 +23,7 @@ body, html {
 /* Định dạng video trong header */
 #header-video {
     position: absolute;
-    top: 30;
+    top: 30px;
     left: 55%;
     transform: translateX(-55%);
     width: 250px;
@@ -54,6 +54,7 @@ body, html {
     width: 400px;
     height: 50px;
     border: 0px solid red;
+    transition: width 1s ease;
 }
 
 #search-bar {
@@ -66,7 +67,7 @@ body, html {
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: width 0.5s ease, border-radius 0.s ease;
+    transition: width 1s ease, border-radius 1s ease;
 }
 
 #search-bar::placeholder {
