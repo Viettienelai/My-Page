@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
 
     // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 290px, di chuyển container lên
     if (scrollTop <= 290) {
-        searchBarContainer.style.top = 290 - scrollTop + 'px';
+        searchBarContainer.style.top = 290 - 10 - scrollTop + 'px';
     } else {
         // Nếu vị trí cuộn lớn hơn 290px, giữ container ở vị trí 0px
         searchBarContainer.style.top = '0px';
