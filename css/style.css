@@ -22,14 +22,16 @@ body, html {
 
 /* Lớp trong suốt cha */
 #overlay {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed; /* Thay đổi thành fixed */
+    top: 0; /* Gắn phần tử vào đầu màn hình */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); /* Giữ phần tử luôn căn giữa */
     width: 400px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
+    z-index: 20; /* Đảm bảo overlay nằm trên các phần tử khác */
 }
+
 
 /* Search bar */
 #search-bar-container {
