@@ -31,6 +31,8 @@ window.addEventListener('scroll', () => {
     }
 
     // Cập nhật màu sắc dựa trên progress2
-    const newColor = `rgb(${255 - (4 * progress2)}, ${255 - (28 * progress2)}, ${255 - (64 * progress2)})`;
-    searchBar.style.backgroundColor = newColor;
+    searchBar.style.backgroundColor = `rgb(${255 - (4 * progress2)}, ${255 - (28 * progress2)}, ${255 - (64 * progress2)})`;
+
+    const header = document.getElementById('header');
+    header.style.opacity = `${1 - progress2}`;
 });
