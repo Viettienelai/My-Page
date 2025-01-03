@@ -30,8 +30,8 @@ function handleScroll() {
         const newWidth = INITIAL_WIDTH + (TARGET_WIDTH - INITIAL_WIDTH) * progress;
         const newRadius = INITIAL_RADIUS + (TARGET_RADIUS - INITIAL_RADIUS) * progress;
 
-        // Áp dụng các thay đổi
-        searchBarContainer.style.top = `${newTop}px`;
+        // Áp dụng các thay đổi với transform và width/radius
+        searchBarContainer.style.transform = `translateY(${newTop - INITIAL_TOP}px)`;  // Di chuyển bằng transform
         searchBar.style.width = `${newWidth}px`;
         searchBar.style.borderRadius = `${newRadius}px`;
     } else if (scrollY > SCROLL_PHASE_ONE && scrollY <= SCROLL_PHASE_TWO) {
@@ -41,8 +41,8 @@ function handleScroll() {
         // Tính toán top trong giai đoạn 2
         const newTop = TARGET_TOP + (FINAL_TOP - TARGET_TOP) * progress;
 
-        // Áp dụng các thay đổi
-        searchBarContainer.style.top = `${newTop}px`;
+        // Áp dụng các thay đổi với transform cho container
+        searchBarContainer.style.transform = `translateY(${newTop - INITIAL_TOP}px)`; // Chỉ thay đổi transform
     }
 }
 
