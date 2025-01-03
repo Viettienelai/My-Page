@@ -62,20 +62,20 @@ body, html {
 
 #ruler {
     position: fixed;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
+    transform: translateX(-50%);
+    width: 1px;
     height: 100%;
     background-color: black;
-    z-index: 1000; /* Luôn hiển thị trên cùng */
+    z-index: 1000;
 }
 
 #ruler::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -50px; /* Đặt vạch ngang 100px nằm chính giữa vạch dọc */
     width: 100px;
     height: 100%;
     background: repeating-linear-gradient(
