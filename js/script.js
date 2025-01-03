@@ -3,7 +3,7 @@ const searchBarContainer = document.getElementById('search-bar-container');
 const searchBar = document.getElementById('search-bar');
 
 // Các hằng số cấu hình
-const FIXED_POSITION_TOP = 50; // Khoảng cách từ đỉnh màn hình khi cố định
+const FIXED_POSITION_TOP = 10; // Khoảng cách từ đỉnh màn hình khi cố định
 const INITIAL_WIDTH = 350; // Chiều rộng ban đầu
 const EXPANDED_WIDTH = 400; // Chiều rộng khi mở rộng
 const INITIAL_TOP = 240; // Vị trí ban đầu của container
@@ -74,5 +74,5 @@ function optimizedScroll() {
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
 // Thêm hiệu ứng chuyển động mượt
-searchBarContainer.style.transition = 'all 0.3s ease';
-searchBar.style.transition = 'all 0.3s ease';
+searchBarContainer.style.transition = 'all 1s ease';
+searchBar.style.transition = 'all 1s ease';
