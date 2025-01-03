@@ -24,6 +24,6 @@ window.addEventListener('scroll', () => {
     searchBar.style.height = `${50 + 10 * progress}px`;
 
     // Thêm hiệu ứng chuyển đổi màu nền thanh tìm kiếm
-    const newColor = `rgb(${255 - (255 * progress)}, ${227 + (28 * progress)}, ${191 + (48 * progress)})`;
+    const newColor = `rgb(${255 - (4 * progress)}, ${255 - (28 * progress)}, ${255 - (64 * progress)})`;
     searchBar.style.backgroundColor = newColor;
 });
