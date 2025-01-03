@@ -1,24 +1,16 @@
 /* Reset mặc định */
-html, body {
+body, html {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    max-width: 400px; /* Giới hạn chiều rộng tối đa */
-    margin: 0 auto; /* Căn giữa trang */
-    position: relative;
-    box-sizing: border-box;
-}
-
-/* Đảm bảo các phần tử con không vượt quá 400px */
-* {
-    max-width: 400px;
-    box-sizing: border-box;
 }
 
 /* Phần header màu xanh */
 #header {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 310px;
     background-color: #ADD8E6;
@@ -26,10 +18,9 @@ html, body {
     border-bottom-right-radius: 25px;
     transition: opacity 0.3s ease;
     z-index: 10;
-    position: relative;
 }
 
-/* Search bar container */
+/* Search bar */
 #search-bar-container {
     position: absolute;
     display: flex;
@@ -37,30 +28,28 @@ html, body {
     top: 240px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%; /* Thay đổi từ 900px sang 100% */
-    height: 700px;
+    width: 400px;
+    height: 100px;
     transition: all 0.3s ease;
-    
-    /* Thêm border màu đen dày 3px */
-    border: 3px solid black;
-    border-radius: 10px; /* Thêm bo góc nhẹ cho container */
 }
 
-/* Search bar */
 #search-bar {
-    width: 350px; /* Giữ nguyên chiều rộng ban đầu */
-    height: 50px;
-    border: 3px solid black; /* Thêm border màu đen dày 3px */
+    width: 100%;
+    height: 100%;
+    border: none;
     border-radius: 70px;
     padding-left: 40px;
     font-size: 16px;
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Đảm bảo không vượt quá chiều rộng của container */
 }
 
-/* Các phần tử khác */
+#search-bar::placeholder {
+    color: #808080;
+    font-style: normal;
+}
+
 #letter-a {
     position: absolute;
     top: 1500px;
@@ -69,10 +58,4 @@ html, body {
     font-size: 50px;
     font-weight: bold;
     color: red;
-}
-
-/* Responsive meta tag */
-@viewport {
-    width: 400px;
-    zoom: 1;
 }
