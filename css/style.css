@@ -67,7 +67,7 @@ body, html {
     padding-left: 40px;
     font-size: 16px;
     outline: none;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: width 0.2s ease, border-radius 1s ease;
     z-index: 7; 
@@ -83,7 +83,7 @@ body, html {
     border-radius: 20px;
     background-color: #ffffff;
     border: 1px solid rgb(0, 255, 81); /* Viền 1px màu đỏ */
-    transition: width 0.3s ease, border-radius 1s ease;
+    transition: width 0.3s ease, border-radius 0.4s ease;
     z-index: 6;
     left: 50%; /* Căn giữa */
     transform: translateX(-50%); /* Căn giữa */

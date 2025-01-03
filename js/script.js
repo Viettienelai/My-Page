@@ -18,8 +18,8 @@ window.addEventListener('scroll', () => {
 
     // Tính toán tỉ lệ thay đổi hiệu ứng
     let progress = 0; // Khởi tạo giá trị mặc định
-    if (scrollTop >= 260) {
-        progress = Math.min((scrollTop - 260) / 40, 1);
+    if (scrollTop >= 240) {
+        progress = Math.min((scrollTop - 0) / 60, 1);
     }
 
     // Cập nhật thay đổi dựa trên progress
