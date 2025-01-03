@@ -24,12 +24,13 @@ window.addEventListener('scroll', () => {
     searchBar.style.width = `${newWidth}px`;
     searchBar.style.height = `${50 + 10 * progress1}px`;
 
-    // Chỉ thay đổi màu nền nếu width của searchBar đạt đúng 400px
+    // Tính toán progress2 cho màu sắc
+    let progress2 = 0; // Khởi tạo giá trị mặc định
     if (scrollTop >= 260) {
-    const progress2 = Math.min((scrollTop - 260) / 40, 1);
-    } else {
-        const progress2 = 0;
+        progress2 = Math.min((scrollTop - 260) / 40, 1);
     }
-        const newColor = `rgb(${255 - (4 * progress2)}, ${255 - (28 * progress2)}, ${255 - (64 * progress2)})`;
-        searchBar.style.backgroundColor = newColor;
+
+    // Cập nhật màu sắc dựa trên progress2
+    const newColor = `rgb(${255 - (4 * progress2)}, ${255 - (28 * progress2)}, ${255 - (64 * progress2)})`;
+    searchBar.style.backgroundColor = newColor;
 });
