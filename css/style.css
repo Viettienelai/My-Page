@@ -52,13 +52,13 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     width: 400px;
-    height: 60px;
+    height: 50px;
     border: 0px solid red;
 }
 
 #search-bar {
     width: 350px;
-    height: 60px;
+    height: 50px;
     border: 0px solid black; /* Viền 1px màu đen cho search bar */
     border-radius: 20px;
     padding-left: 40px;
