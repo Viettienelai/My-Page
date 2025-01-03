@@ -41,6 +41,7 @@ body, html {
     transform: translateX(-50%);
     width: 400px;
     height: 50px;
+    transition: all 2s ease;
 }
 
 #search-bar {
