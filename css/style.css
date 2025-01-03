@@ -67,8 +67,18 @@ body, html {
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease, border-radius 1s ease;
+    transition: width 0.2s ease, border-radius 1s ease;
     z-index: 6; 
+}
+
+#bar-inside-color {
+    width: 300px;
+    height: 40px;
+    border-radius: 100px;
+    color: #808080;
+    pointer-events: none;
+    transition: width 0.3s ease, border-radius 1s ease;
+    z-index: 7;
 }
 
 #search-bar::placeholder {
