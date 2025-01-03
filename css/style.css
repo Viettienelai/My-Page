@@ -28,7 +28,7 @@ body, html {
     transform: translateX(-55%);
     width: 250px;
     height: 250px;
-    z-index: 3; /* Đặt video dưới các phần tử khác trong header */
+    z-index: 3;
 }
 
 /* Lớp trong suốt cha */
@@ -39,8 +39,8 @@ body, html {
     transform: translateX(-50%);
     width: 400px;
     height: 100%;
-    background-color: rgba(255, 0, 0, 0);
-    z-index: 4; 
+    background-color: rgba(0, 0, 0, 0); /* Đổi về trong suốt */
+    z-index: 4;
 }
 
 /* Search bar */
@@ -60,14 +60,14 @@ body, html {
 #search-bar {
     width: 350px;
     height: 50px;
-    border: 0px solid black; /* Viền 1px màu đen cho search bar */
+    border: 0px solid black;
     border-radius: 20px;
     padding-left: 40px;
     font-size: 16px;
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 6; 
+    z-index: 6;
     transition: width 0.3s ease, border-radius 1s ease;
 }
 
@@ -76,13 +76,16 @@ body, html {
     font-style: normal;
 }
 
-#bar-inside-color { width: 300px;
-                    height: 40px;
-                    border-radius: 100px;
-                    color: #808080;
-                    pointer-events: none;
-                    transition: width 0.3s ease, border-radius 1s ease;
-                    z-index: 7;  }
+/* Thêm hiệu ứng cho phần bar bên trong */
+#bar-inside-color {
+    width: 300px;
+    height: 40px;
+    border-radius: 100px;
+    color: #808080;
+    pointer-events: none;
+    transition: width 0.3s ease, border-radius 1s ease;
+    z-index: 7;
+}
 
 #letter-a {
     position: absolute;
@@ -120,4 +123,3 @@ body, html {
         black 10px
     );
 }
-
