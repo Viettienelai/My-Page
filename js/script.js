@@ -1,24 +1,18 @@
-// Lấy tham chiếu đến thanh tìm kiếm và container
-const searchBar = document.getElementById('search-bar');
-const searchBarContainer = document.getElementById('search-bar-container');
+window.addEventListener("scroll", function() {
+    var scrollY = window.scrollY;  // Lấy vị trí scroll hiện tại
+    var searchBarContainer = document.getElementById("search-bar-container");
+    var searchBar = document.getElementById("search-bar");
 
-// Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
-window.addEventListener('scroll', () => {
-    // Lấy vị trí cuộn trang
-    const scrollTop = window.scrollY;
+    // Điều kiện khi scroll từ 0 đến 290px
+    if (scrollY <= 290) {
+        var translateY = (scrollY / 290) * 290;  // Tính giá trị translateY từ 0 đến 290
+        searchBarContainer.style.transform = "translateY(-" + translateY + "px)";  // Di chuyển container theo scroll
 
-    // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 290px, di chuyển container lên
-    if (scrollTop <= 290) {
-        searchBarContainer.style.top = 290 - scrollTop + 'px';
-    } else {
-        // Nếu vị trí cuộn lớn hơn 290px, giữ container ở vị trí 0px
-        searchBarContainer.style.top = '0px';
+        // Tính toán width và border-radius cho search bar
+        var newWidth = 350 + (scrollY / 290) * (400 - 350);  // Tăng dần width từ 350px đến 400px
+        var newBorderRadius = 20 - (scrollY / 290) * 20;  // Giảm dần border-radius từ 20px xuống 0
+
+        searchBar.style.width = newWidth + "px";
+        searchBar.style.borderRadius = newBorderRadius + "px";
     }
-
-    // Tính toán tỷ lệ thay đổi hiệu ứng (từ 0 đến 1)
-    const progress = Math.min(scrollTop / 290, 1);
-
-    // Cập nhật border-radius và width của thanh tìm kiếm
-    searchBar.style.borderRadius = `${20 - 20 * progress}px`;
-    searchBar.style.width = `${350 + 50 * progress}px`;
 });

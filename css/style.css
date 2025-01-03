@@ -66,6 +66,7 @@ body, html {
     outline: none;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: width 0.5s ease, border-radius 0.s ease;
 }
 
 #search-bar::placeholder {
