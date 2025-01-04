@@ -33,19 +33,51 @@ body, html {
 }
 
 @keyframes bounce {
-  0% {
-    top: -250px;
-    transform: translateX(-55%) scale(0.1);
-  }
-  50% {
-    top: 50px;
-    transform: translateX(-55%) scale(1.2);
-  }
-  100% {
-    top: 30px;
-    transform: translateX(-55%) scale(1);
-  }
-}
+    0% {
+      top: -230px;
+      transform: translateX(-55%) scale(0.1);
+    }
+    10% {
+      top: -210px;
+      transform: translateX(-55%) scale(0.34);
+    }
+    20% {
+      top: -180px;
+      transform: translateX(-55%) scale(0.58);
+    }
+    30% {
+      top: -140px;
+      transform: translateX(-55%) scale(0.82);
+    }
+    40% {
+      top: -90px;
+      transform: translateX(-55%) scale(1.02);
+    }
+    50% {
+      top: -30px;
+      transform: translateX(-55%) scale(1.2);
+    }
+    60% {
+      top: 40px;
+      transform: translateX(-55%) scale(1.16);
+    }
+    70% {
+      top: 35px;
+      transform: translateX(-55%) scale(1.12);
+    }
+    80% {
+      top: 32.5px;
+      transform: translateX(-55%) scale(1.08);
+    }
+    90% {
+      top: 31.25px;
+      transform: translateX(-55%) scale(1.04);
+    }
+    100% {
+      top: 30px;
+      transform: translateX(-55%) scale(1);
+    }
+  }  
 
 /* Lớp trong suốt cha */
 #overlay {
