@@ -23,7 +23,7 @@ body, html {
 /* Định dạng video trong header */
 #header-video {
     position: absolute;
-    top: 30px;
+    top: -230px;
     left: 55%;
     transform: translateX(-55%);
     width: 250px;
