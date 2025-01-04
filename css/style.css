@@ -33,51 +33,51 @@ body, html {
 }
 
 @keyframes bounce {
-    0% {
-      top: -230px;
-      transform: translateX(-55%) scale(1);
-    }
-    10% {
-      top: -180px;
-      transform: translateX(-55%) scale(1);
-    }
-    20% {
-      top: -130px;
-      transform: translateX(-55%) scale(1);
-    }
-    30% {
-      top: -57px;
-      transform: translateX(-55%) scale(1.02);
-    }
-    40% {
-      top: -10px;
-      transform: translateX(-55%) scale(1.04);
-    }
-    50% {
-      top: 20px;
-      transform: translateX(-55%) scale(1.06);
-    }
-    60% {
-      top: 35px;
-      transform: translateX(-55%) scale(1.08);
-    }
-    70% {
-      top: 40px;
-      transform: translateX(-55%) scale(1.1);
-    }
-    80% {
-      top: 39px;
-      transform: translateX(-55%) scale(1.066);
-    }
-    90% {
-      top: 37px;
-      transform: translateX(-55%) scale(1.033);
-    }
-    100% {
-      top: 30px;
-      transform: translateX(-55%) scale(1);
-    }
-  }  
+  0% {
+    top: -230px;
+    transform: translateX(-55%);
+  }
+  10% {
+    top: -130px;
+    transform: translateX(-55%);
+  }
+  20% {
+    top: -57px;
+    transform: translateX(-55%);
+  }
+  30% {
+    top: -7px;
+    transform: translateX(-55%);
+  }
+  40% {
+    top: 25px;
+    transform: translateX(-55%);
+  }
+  50% {
+    top: 44px;
+    transform: translateX(-55%);
+  }
+  60% {
+    top: 50px;
+    transform: translateX(-55%);
+  }
+  70% {
+    top: 49px;
+    transform: translateX(-55%);
+  }
+  80% {
+    top: 45px;
+    transform: translateX(-55%);
+  }
+  90% {
+    top: 39px;
+    transform: translateX(-55%);
+  }
+  100% {
+    top: 30px;
+    transform: translateX(-55%);
+  }
+}
 
 /* Lớp trong suốt cha */
 #overlay {
