@@ -28,7 +28,7 @@ body, html {
     transform: scaleY(2) ; 
   }
   50% {
-    top: -20px;
+    top: -10px;
     transform: scaleY(0.9);
   }
   100% {
