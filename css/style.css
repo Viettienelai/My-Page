@@ -64,8 +64,6 @@ body, html {
     height: 50px;
     border-radius: 20px;
     border: none;
-    display: flex;
-    justify-content: center;
     padding-left: 40px;
     font-size: 16px;
     outline: none;
