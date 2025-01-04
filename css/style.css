@@ -59,19 +59,19 @@ body, html {
     }
     60% {
       top: 35px;
-      transform: translateX(-55%) scale(1);
+      transform: translateX(-55%) scale(1.25);
     }
     70% {
       top: 40px;
-      transform: translateX(-55%) scale(1);
+      transform: translateX(-55%) scale(1.5);
     }
     80% {
       top: 39px;
-      transform: translateX(-55%) scale(1);
+      transform: translateX(-55%) scale(1.33);
     }
     90% {
       top: 37px;
-      transform: translateX(-55%) scale(1);
+      transform: translateX(-55%) scale(1.16);
     }
     100% {
       top: 30px;
