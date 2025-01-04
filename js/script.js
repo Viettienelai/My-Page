@@ -29,6 +29,6 @@ window.addEventListener('scroll', () => {
     searchBar.style.borderRadius = `${20 - 5 * progress}px`;
     inside.style.width = (350 + 50 * progress) + 'px';
     inside.style.backgroundColor = `rgb(${255 - 4 * progress}, ${255 - 28 * progress}, ${255 - 64 * progress})`;
-    inside.style.borderRadius = `${20 - 20 * progress}px`; 
+    inside.style.borderRadius = `${100 - 20 * progress}px`; 
     header.style.opacity = 1 - progress;
 });
