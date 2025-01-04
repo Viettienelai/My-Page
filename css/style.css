@@ -35,43 +35,43 @@ body, html {
 @keyframes bounce {
     0% {
       top: -230px;
-      transform: translateX(-55%) scale(0.1);
+      transform: translateX(-55%) scale(1);
     }
     10% {
       top: -180px;
-      transform: translateX(-55%) scale(0.34);
+      transform: translateX(-55%) scale(1);
     }
     20% {
       top: -130px;
-      transform: translateX(-55%) scale(0.58);
+      transform: translateX(-55%) scale(1);
     }
     30% {
       top: -57px;
-      transform: translateX(-55%) scale(0.82);
+      transform: translateX(-55%) scale(1);
     }
     40% {
       top: -10px;
-      transform: translateX(-55%) scale(1.02);
+      transform: translateX(-55%) scale(1);
     }
     50% {
       top: 20px;
-      transform: translateX(-55%) scale(1.2);
+      transform: translateX(-55%) scale(1);
     }
     60% {
       top: 35px;
-      transform: translateX(-55%) scale(1.2);
+      transform: translateX(-55%) scale(1);
     }
     70% {
       top: 40px;
-      transform: translateX(-55%) scale(1.12);
+      transform: translateX(-55%) scale(1);
     }
     80% {
       top: 39px;
-      transform: translateX(-55%) scale(1.08);
+      transform: translateX(-55%) scale(1);
     }
     90% {
       top: 37px;
-      transform: translateX(-55%) scale(1.04);
+      transform: translateX(-55%) scale(1);
     }
     100% {
       top: 30px;
