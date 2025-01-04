@@ -35,15 +35,15 @@ body, html {
 @keyframes bounce {
   0% {
     top: -300px;
-    transform: scale(0.5);
+    transform: translateX(-55%) scale(0.5);
   }
   50% {
     top: 30px;
-    transform: scale(1.1);
+    transform: translateX(-55%) scale(1.1);
   }
   100% {
     top: 30px;
-    transform: scale(1);
+    transform: translateX(-55%) scale(1);
   }
 }
 
