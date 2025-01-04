@@ -23,13 +23,16 @@ body, html {
 
 @keyframes header {
   0% {
-    transform: scaleY(2); top: 0px; 
+    top: 0px;
+    transform: scaleY(2) ; 
   }
   50% {
-    transform: scaleY(0.9); top: 20px;
+    top: -20px;
+    transform: scaleY(0.9);
   }
   100% {
-    transform: scaleY(1); top: 0px;
+    top: 0px;
+    transform: scaleY(1); 
   }
 }
 
