@@ -74,6 +74,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     animation: bar-animation 1s linear;
+    animation-delay: 0.5s;
 }
 
 /* Placeholder */
