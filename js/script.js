@@ -18,10 +18,13 @@ window.addEventListener('scroll', () => {
         searchBarContainer.style.top = '0px';
     }
 
-        progress1 = Math.min( scrollTop / 230, 1);
+    let progress1 = Math.min(scrollTop / 230, 1);
 
-    if (scrollTop <= 230) {headerVideo.style.top = 30 + 200 * progress1 + 'px';
-    } else {headerVideo.style.top = '230px'; }
+    if (scrollTop <= 230) {
+        headerVideo.style.top = 30 + 200 * progress1 + 'px';
+    } else {
+        headerVideo.style.top = '230px';
+    }
 
     // Tính toán tỉ lệ thay đổi hiệu ứng
     let progress2 = 0; // Khởi tạo giá trị mặc định
@@ -37,6 +40,6 @@ window.addEventListener('scroll', () => {
     inside.style.backgroundColor = `rgb(${255 - 4 * progress2}, ${255 - 28 * progress2}, ${255 - 64 * progress2})`;
     inside.style.borderRadius = `${100 - 100 * progress2}px`; 
     header.style.opacity = 1 - progress2;
-    headerVideo.style.height = 250 progress1 + 'px'
-    headerVideo.style.width = 250 - 200 * progress1 + 'px'
+    headerVideo.style.height = 250 * progress1 + 'px';
+    headerVideo.style.width = 250 - 200 * progress1 + 'px';
 });
