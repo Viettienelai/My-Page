@@ -84,53 +84,41 @@ body, html {
     font-style: normal;
 }
 
-/* Animation keyframes */
 @keyframes bar-animation {
-    0% {
-      transform: scaleX(0) scaleY(0.1) translateY(20.7px);
-      opacity: 1;
-    }
-    10% {
-      opacity: 1;
-      transform: scaleX(0.38) scaleY(0.5) translateY(11.5px);
-    }
-    20% {
-      opacity: 1;
-      transform: scaleX(0.63) scaleY(0.75) translateY(5.75px);
-    }
-    30% {
-      opacity: 1;
-      transform: scaleX(0.78) scaleY(0.88) translateY(2.76px);
-    }
-    40% {
-      opacity: 1;
-      transform: scaleX(0.87) scaleY(0.95) translateY(0.92px);
-    }
-    50% {
-      opacity: 1;
-      transform: scaleX(0.92) scaleY(0.98) translateY(0.46px);
-    }
-    60% {
-      opacity: 1;
-      transform: scaleX(0.957) scaleY(0.99) translateY(0.23px);
-    }
-    70% {
-      opacity: 1;
-      transform: scaleX(0.977) scaleY(1) translateY(0px);
-    }
-    80% {
-      opacity: 1;
-      transform: scaleX(0.99) scaleY(1) translateY(0px);
-    }
-    90% {
-      opacity: 1;
-      transform: scaleX(0.997) scaleY(1) translateY(0px);
-    }
-    100% {
-      opacity: 1;
-      transform: scaleX(1) scaleY(1) translateY(0px);
-    }
+  0% {
+      transform: translateX(-50%) scaleX(0) scaleY(0.1) translateY(20.7px);
   }
+  10% {
+      transform: translateX(-50%) scaleX(0.38) scaleY(0.5) translateY(11.5px);
+  }
+  20% {
+      transform: translateX(-50%) scaleX(0.63) scaleY(0.75) translateY(5.75px);
+  }
+  30% {
+      transform: translateX(-50%) scaleX(0.78) scaleY(0.88) translateY(2.76px);
+  }
+  40% {
+      transform: translateX(-50%) scaleX(0.87) scaleY(0.95) translateY(0.92px);
+  }
+  50% {
+      transform: translateX(-50%) scaleX(0.92) scaleY(0.98) translateY(0.46px);
+  }
+  60% {
+      transform: translateX(-50%) scaleX(0.957) scaleY(0.99) translateY(0.23px);
+  }
+  70% {
+      transform: translateX(-50%) scaleX(0.977) scaleY(1) translateY(0px);
+  }
+  80% {
+      transform: translateX(-50%) scaleX(0.99) scaleY(1) translateY(0px);
+  }
+  90% {
+      transform: translateX(-50%) scaleX(0.997) scaleY(1) translateY(0px);
+  }
+  100% {
+      transform: translateX(-50%) scaleX(1) scaleY(1) translateY(0px);
+  }
+}
 
 /* Bar inside */
 #bar-inside-color {

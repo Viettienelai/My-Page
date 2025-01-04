@@ -3,7 +3,7 @@ const searchBar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
 const searchBarContainer = document.getElementById('search-bar-container');
 const header = document.getElementById('header');
-const headervideo = document.getElementById('header-video');
+const headerVideo = document.getElementById('header-video');
 
 // Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
 window.addEventListener('scroll', () => {
@@ -18,21 +18,25 @@ window.addEventListener('scroll', () => {
         searchBarContainer.style.top = '0px';
     }
 
+        progress1 = Math.min( scrollTop / 230, 1);
+
+    if (scrollTop <= 230) {headerVideo.style.top = 30 + 200 * progress1 + 'px';
+    } else {headerVideo.style.top = '230px'; }
+
     // Tính toán tỉ lệ thay đổi hiệu ứng
-    let progress = 0; // Khởi tạo giá trị mặc định
+    let progress2 = 0; // Khởi tạo giá trị mặc định
     if (scrollTop >= 240) {
-        progress = Math.min((scrollTop - 240) / 60, 1);
+        progress2 = Math.min((scrollTop - 240) / 60, 1);
     }
 
     // Cập nhật thay đổi dựa trên progress
-    searchBar.style.width = (350 + 20 * progress) + 'px'; 
-    searchBar.style.height = `${50 - 10 * progress}px`; 
-    searchBar.style.borderRadius = `${20 - 5 * progress}px`;
-    inside.style.width = (350 + 50 * progress) + 'px';
-    inside.style.backgroundColor = `rgb(${255 - 4 * progress}, ${255 - 28 * progress}, ${255 - 64 * progress})`;
-    inside.style.borderRadius = `${100 - 100 * progress}px`; 
-    header.style.opacity = 1 - progress;
-    headervideo.style.height = 250 - 200 * progress + 'px'
-    headervideo.style.width = 250 - 200 * progress + 'px'
-    headervideo.style.top = 30 + 100 * progress + 'px'
+    searchBar.style.width = (350 + 20 * progress2) + 'px'; 
+    searchBar.style.height = `${50 - 10 * progress2}px`; 
+    searchBar.style.borderRadius = `${20 - 5 * progress2}px`;
+    inside.style.width = (350 + 50 * progress2) + 'px';
+    inside.style.backgroundColor = `rgb(${255 - 4 * progress2}, ${255 - 28 * progress2}, ${255 - 64 * progress2})`;
+    inside.style.borderRadius = `${100 - 100 * progress2}px`; 
+    header.style.opacity = 1 - progress2;
+    headerVideo.style.height = 250 progress1 + 'px'
+    headerVideo.style.width = 250 - 200 * progress1 + 'px'
 });
