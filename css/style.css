@@ -29,7 +29,7 @@ body, html {
   }
   50% {
     top: -20px;
-    transform: scaleY(0.98);
+    transform: scaleY(0.99);
   }
   100% {
     top: 0px;
