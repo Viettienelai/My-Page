@@ -49,7 +49,7 @@ body, html {
     animation: video 1s linear;
 }
 
-@keyframes bounce {
+@keyframes video {
   0% { top: -230px; transform: translateX(-55%); }
   10% { top: -130px; transform: translateX(-55%); }
   20% { top: -57px; transform: translateX(-55%); }
@@ -114,7 +114,7 @@ body, html {
     font-style: normal;
 }
 
-@keyframes bar-animation {
+@keyframes bar {
   0% { transform: translateX(-50%) scaleX(0) scaleY(0.1) translateY(20.7px); }
   10% { transform: translateX(-50%) scaleX(0.38) scaleY(0.5) translateY(11.5px); }
   20% { transform: translateX(-50%) scaleX(0.63) scaleY(0.75) translateY(5.75px); }
