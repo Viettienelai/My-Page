@@ -40,6 +40,6 @@ window.addEventListener('scroll', () => {
     inside.style.backgroundColor = `rgb(${255 - 4 * progress2}, ${255 - 28 * progress2}, ${255 - 64 * progress2})`;
     inside.style.borderRadius = `${100 - 100 * progress2}px`; 
     header.style.opacity = 1 - progress2;
-    headerVideo.style.height = 250 * progress1 + 'px';
+    headerVideo.style.height = 250 - 200 * progress1 + 'px';
     headerVideo.style.width = 250 - 200 * progress1 + 'px';
 });
