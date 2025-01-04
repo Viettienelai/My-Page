@@ -29,7 +29,7 @@ body, html {
     width: 250px;
     height: 250px;
     z-index: 3;
-    animation: bounce 1s ease-out;
+    animation: bounce 1s linear;
 }
 
 @keyframes bounce {
