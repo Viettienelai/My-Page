@@ -69,7 +69,7 @@ body, html {
 .bookmark-row {
   display: flex;
   justify-content: space-evenly;
-  height: 90px;
+  height: 85px;
   width: 100%;
   z-index: 6;
 }
