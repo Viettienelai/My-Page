@@ -63,26 +63,21 @@ body, html {
 
 .bookmark-row {
   display: flex;
-  flex-wrap: wrap; /* Cho phép các phần tử con xuống dòng nếu không đủ không gian */
-  justify-content: flex-start; /* Căn lề trái cho các phần tử trong container */
-  align-items: flex-start; /* Căn chỉnh các phần tử theo chiều dọc */
+  flex-wrap: wrap; /* Cho phép các item xuống dòng */
+  justify-content: space-evenly; /* Căn đều các item theo chiều ngang */
+  align-items: flex-start; /* Căn chỉnh các item theo chiều dọc */
   height: 90px;
   width: 100%;
   z-index: 6;
 }
 
 .bookmark-row > div {
-  flex: 1 1 20%; /* Mỗi item chiếm 20% chiều rộng của container, sẽ có tối đa 5 item 1 hàng */
+  flex: 1 1 20%; /* Mỗi item chiếm tối đa 20% chiều rộng của container */
   max-width: 20%; /* Đảm bảo mỗi item chiếm tối đa 1/5 chiều rộng của container */
-}
-
-.bookmark-row > div:nth-child(5) {
-  margin-right: auto; /* Đẩy item thứ 5 sang trái */
 }
 
 .bookmark-item {
   opacity: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   text-decoration: none;
   color: #333;
@@ -95,7 +90,6 @@ body, html {
   opacity: 0;
   width: 50px;
   height: 50px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
@@ -105,7 +99,6 @@ body, html {
   opacity: 0;
   margin-top: 5px;
   font-size: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
 }
