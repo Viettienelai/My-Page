@@ -64,7 +64,8 @@ body, html {
 }
 .bookmark-container {
   position: absolute;
-  top: 400px;
+  margin-top: 40px;
+  width: 400px;
   border: 1px solid #ff0000;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4; /* Đặt khoảng cách từ top */
