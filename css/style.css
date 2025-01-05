@@ -76,6 +76,15 @@ body, html {
   max-width: 20%; /* Đảm bảo mỗi item chiếm tối đa 1/5 chiều rộng của container */
 }
 
+/* Điều chỉnh hàng cuối nếu số item < 5 */
+.bookmark-row:has(:nth-child(5)) {
+  justify-content: flex-start; /* Căn lề trái khi có 5 item */
+}
+
+.bookmark-row:has(:nth-last-child(-n+4)) {
+  justify-content: flex-start; /* Nếu có ít hơn 5 item, căn lề trái */
+}
+
 .bookmark-item {
   opacity: 0;
   text-align: center;
