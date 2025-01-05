@@ -74,9 +74,9 @@ body, html {
 .bookmark-row {
   border: 1px solid #00ff6a;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
-  z-index: 5;
+  z-index: 6;
 }
 
 .bookmark-item {
@@ -84,20 +84,20 @@ body, html {
   text-decoration: none;
   color: #333;
   display: block;
-  z-index: 5;
+  z-index: 7;
 }
 
 .bookmark-avatar {
   width: 50px;
   height: 50px;
   object-fit: cover;
-  z-index: 6;
+  z-index: 7;
 }
 
 .bookmark-item p {
-  margin-top: 7px;
+  margin-top: 2px;
   font-size: 10px;
-  z-index: 6;
+  z-index: 7;
 }
 
 /* Lớp trong suốt cha */
@@ -109,8 +109,7 @@ body, html {
     width: 400px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
-    z-index: 7; 
-    pointer-events: none;
+    z-index: 5; 
 }
 
 /* Search bar container */
