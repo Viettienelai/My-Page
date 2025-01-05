@@ -61,7 +61,7 @@ body, html {
   left: 50%;
   transform: translateX(-50%);
   margin-top: 40px;
-  width: 90%;
+  width: 95%;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4;
 }
@@ -206,7 +206,6 @@ body, html {
     border: none;
     border-radius: 100px;
     background-color: #FBE3BF;
-    transition: width 0.3s ease, border-radius 0.4s ease;
     z-index: 9;
     left: 50%;
     transform: translateX(-50%);
