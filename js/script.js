@@ -36,12 +36,19 @@ window.addEventListener('scroll', () => {
         progress2 = Math.min((scrollTop - 240) / 60, 1);
     }
 
+    let minBarWidth = (100 * 350 / 390);
+    let maxBarWidth = (100 * 370 / 390);
+    let changeBarWidth = maxBarWidth - minBarWidth;
+
+    let minInsideWidth = (100 * 350 / 390); 
+    let remainingInsideWidth = 100 - minInsideWidth;
+
 // Cập nhật thay đổi dựa trên progress2
     Bar.style.top = (0 + 10 * progress2) + 'px';
-    Bar.style.width = ((100 * 350 / 390) + (100 * 370/390 - (100 * 350 / 390)) * progress2) + '%';
+    Bar.style.width = (minBarWidth + changeBarWidth * progress2) + '%';
     Bar.style.height = (50 - 10 * progress2) + 'px';
     Bar.style.borderRadius = (20 - 5 * progress2) + 'px';
-    inside.style.width = ((100 * 350 / 390) + (100 - (100 * 350 / 390)) * progress2) + '%';
+    inside.style.width = (minInsideWidth + remainingInsideWidth * progress2) + '%';
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.backgroundColor = 'rgb(' + (255 - 4 * progress2) + ', ' + (255 - 28 * progress2) + ', ' + (255 - 64 * progress2) + ')';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
