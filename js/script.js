@@ -2,7 +2,6 @@
 const Bar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
 const BarContainer = document.getElementById('bar-container');
-const header = document.getElementById('header');
 const headerVideo = document.getElementById('header-video');
 
 // Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
