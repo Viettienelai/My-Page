@@ -1,6 +1,8 @@
 body, html {
     height: 1500px;
     width: 100%;
+    margin: none;
+    padding: none;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     overflow-x: hidden;
