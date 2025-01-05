@@ -1,7 +1,7 @@
-/* Reset mặc định */
 @font-face {
   font-family: 'Cicero Sans Negrita';
   src: url('assets/fonts/cicero sans negrita.ttf') format('truetype');
+  font-weight: 600;
 }
 
 body, html {
