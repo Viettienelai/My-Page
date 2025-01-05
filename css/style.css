@@ -81,7 +81,6 @@ body, html {
   color: #333;
   display: block;
   z-index: 7;
-  animation: bookmarks 1s ease-in-out forwards;
 }
 
 .bookmark-avatar {
