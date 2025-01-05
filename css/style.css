@@ -58,8 +58,10 @@ body, html {
 
 .bookmark-container {
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 40px;
-  width: 390px;
+  width: 100%px;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4; /* Đặt khoảng cách từ top */
 }
