@@ -44,17 +44,17 @@ body, html {
 }
 
 @keyframes video {
-  0% { transform: translateX(-55%) translateY(-260px); } 
-  10% { transform: translateX(-55%) translateY(-160px); } 
-  20% { transform: translateX(-55%) translateY(-87px); } 
-  30% { transform: translateX(-55%) translateY(-37px); }
-  40% { transform: translateX(-55%) translateY(-5px); } 
-  50% { transform: translateX(-55%) translateY(14px); } 
-  60% { transform: translateX(-55%) translateY(20px); } 
-  70% { transform: translateX(-55%) translateY(19px); } 
-  80% { transform: translateX(-55%) translateY(15px); }
-  90% { transform: translateX(-55%) translateY(9px); } 
-  100% { transform: translateX(-55%) translateY(0); } 
+  0% { transform: translateY(-260px); } 
+  10% { transform: translateY(-160px); } 
+  20% { transform: translateY(-87px); } 
+  30% { transform: translateY(-37px); }
+  40% { transform: translateY(-5px); } 
+  50% { transform: translateY(14px); } 
+  60% { transform: translateY(20px); } 
+  70% { transform: translateY(19px); } 
+  80% { transform: translateY(15px); }
+  90% { transform: translateY(9px); } 
+  100% { transform: translateY(0); } 
 }
 
 .bookmark-container {
