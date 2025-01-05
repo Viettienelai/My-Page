@@ -63,26 +63,10 @@ body, html {
 
 .bookmark-row {
   display: flex;
-  flex-wrap: wrap; /* Cho phép các item xuống dòng */
-  justify-content: space-evenly; /* Căn đều các item theo chiều ngang */
-  align-items: flex-start; /* Căn chỉnh các item theo chiều dọc */
+  justify-content: space-evenly;
   height: 90px;
   width: 100%;
   z-index: 6;
-}
-
-.bookmark-row > div {
-  flex: 1 1 20%; /* Mỗi item chiếm tối đa 20% chiều rộng của container */
-  max-width: 20%; /* Đảm bảo mỗi item chiếm tối đa 1/5 chiều rộng của container */
-}
-
-/* Điều chỉnh hàng cuối nếu số item < 5 */
-.bookmark-row:has(:nth-child(5)) {
-  justify-content: flex-start; /* Căn lề trái khi có 5 item */
-}
-
-.bookmark-row:has(:nth-last-child(-n+4)) {
-  justify-content: flex-start; /* Nếu có ít hơn 5 item, căn lề trái */
 }
 
 .bookmark-item {
