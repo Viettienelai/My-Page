@@ -65,13 +65,13 @@ body, html {
 .bookmark-container {
   position: absolute;
   top: 400px;
-  border: #ff0000;
+  border: 1px solid #ff0000;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4; /* Đặt khoảng cách từ top */
 }
 
 .bookmark-row {
-  border: #00ff6a;
+  border: 1px solid #00ff6a;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -89,14 +89,13 @@ body, html {
 .bookmark-avatar {
   width: 50px;
   height: 50px;
-  border-radius: 10px;
   object-fit: cover;
   z-index: 6;
 }
 
 .bookmark-item p {
   margin-top: 7px;
-  font-size: 14px;
+  font-size: 10px;
   z-index: 6;
 }
 
@@ -201,6 +200,7 @@ body, html {
     height: 100%;
     background-color: black;
     z-index: 1000;
+    pointer-events: none;
 }
 
 #ruler::before {
@@ -210,6 +210,7 @@ body, html {
     left: -50px;
     width: 100px;
     height: 100%;
+    pointer-events: none;
     background: repeating-linear-gradient(
         to bottom,
         transparent,
