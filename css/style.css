@@ -63,13 +63,15 @@ body, html {
   100% { top: 30px; transform: translateX(-55%); }
 }
 .bookmark-container {
-  position: relative;
+  position: absolute;
   top: 400px;
+  border: #ff0000;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4; /* Đặt khoảng cách từ top */
 }
 
 .bookmark-row {
+  border: #00ff6a;
   display: flex;
   justify-content: space-around;
   width: 100%;
