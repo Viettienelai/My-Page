@@ -62,9 +62,9 @@ body, html {
   transform: translateX(-50%);
   margin-top: 40px;
   width: 100%px;
-  border: 1px red;
+  border: 1px solid red;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 4; /* Đặt khoảng cách từ top */
+  z-index: 4;
 }
 
 .bookmark-row {
