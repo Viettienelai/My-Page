@@ -38,7 +38,7 @@ window.addEventListener('scroll', () => {
 
 // Cập nhật thay đổi dựa trên progress2
     Bar.style.top = (0 + 10 * progress2) + 'px';
-    Bar.style.width = (350 + 20 * progress2) + 'px';
+    Bar.style.width = ((100 * 350 / 390) + (100 * 370/390 - (100 * 350 / 390)) * progress2) + '%';
     Bar.style.height = (50 - 10 * progress2) + 'px';
     Bar.style.borderRadius = (20 - 5 * progress2) + 'px';
     inside.style.width = ((100 * 350 / 390) + (100 - (100 * 350 / 390)) * progress2) + '%';
