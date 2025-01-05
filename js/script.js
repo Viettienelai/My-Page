@@ -1,7 +1,7 @@
 // Lấy tham chiếu đến các thành phần
-const searchBar = document.getElementById('search-bar');
+const Bar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
-const searchBarContainer = document.getElementById('search-bar-container');
+const BarContainer = document.getElementById('search-bar-container');
 const header = document.getElementById('header');
 const headerVideo = document.getElementById('header-video');
 
@@ -12,10 +12,10 @@ window.addEventListener('scroll', () => {
 
 // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 300px, di chuyển container lên
     if (scrollTop <= 290) {
-        searchBarContainer.style.top = 290 - scrollTop + 'px';
+        BarContainer.style.top = 290 - scrollTop + 'px';
     } else {
     // Nếu vị trí cuộn lớn hơn 300px, giữ container ở vị trí cố định
-        searchBarContainer.style.top = '0px';
+        BarContainer.style.top = '0px';
     }
     
 // Tính toán tỉ lệ thay đổi hiệu ứng 1
@@ -29,7 +29,6 @@ window.addEventListener('scroll', () => {
 // Cập nhật thay đổi dựa trên progress1
     headerVideo.style.height = 250 - 200 * progress1 + 'px';
     headerVideo.style.width = 250 - 200 * progress1 + 'px';
-    headerVideo.style.left = 55 - 5 * progress1 + '%';
 
 // Tính toán tỉ lệ thay đổi hiệu ứng 2
     let progress2 = 0; // Khởi tạo giá trị mặc định
@@ -38,9 +37,10 @@ window.addEventListener('scroll', () => {
     }
 
 // Cập nhật thay đổi dựa trên progress2
-    searchBar.style.width = (350 + 20 * progress2) + 'px';
-    searchBar.style.height = (50 - 10 * progress2) + 'px';
-    searchBar.style.borderRadius = (20 - 5 * progress2) + 'px';
+    Bar.style.top = (0 + 10 * progress2) + 'px';
+    Bar.style.width = (350 + 20 * progress2) + 'px';
+    Bar.style.height = (50 - 10 * progress2) + 'px';
+    Bar.style.borderRadius = (20 - 5 * progress2) + 'px';
     inside.style.width = (350 + 45 * progress2) + 'px';
     inside.style.backgroundColor = 'rgb(' + (255 - 4 * progress2) + ', ' + (255 - 28 * progress2) + ', ' + (255 - 64 * progress2) + ')';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
