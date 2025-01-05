@@ -24,7 +24,7 @@ body, html {
 }
 
 @keyframes header {
-  0% { top: 0px; transform: scaleY(3);  }
+  0% { top: 0px; transform: scaleY(3.5);  }
   50% { top: -20px; transform: scaleY(0.995); }
   100% { top: 0px; transform: scaleY(1); }
 }
