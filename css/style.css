@@ -20,6 +20,7 @@ body, html {
     transition: opacity 0.3s ease;
     z-index: 2;
     animation: header 1s forwards;
+    will-change: transform, opacity;
 }
 
 @keyframes header {
@@ -38,21 +39,23 @@ body, html {
     height: 250px;
     z-index: 3;
     animation: video 1s linear;
+    will-change: transform, top;
 }
 
 @keyframes video {
-  0% { top: -230px; transform: translateX(-55%); }
-  10% { top: -130px; transform: translateX(-55%); }
-  20% { top: -57px; transform: translateX(-55%); }
-  30% { top: -7px; transform: translateX(-55%); }
-  40% { top: 25px; transform: translateX(-55%); }
-  50% { top: 44px; transform: translateX(-55%); }
-  60% { top: 50px; transform: translateX(-55%); }
-  70% { top: 49px; transform: translateX(-55%); }
-  80% { top: 45px; transform: translateX(-55%); }
-  90% { top: 39px; transform: translateX(-55%); }
-  100% { top: 30px; transform: translateX(-55%); }
+  0% { transform: translateX(-55%) translateY(-260px); } 
+  10% { transform: translateX(-55%) translateY(-160px); } 
+  20% { transform: translateX(-55%) translateY(-87px); } 
+  30% { transform: translateX(-55%) translateY(-37px); }
+  40% { transform: translateX(-55%) translateY(-5px); } 
+  50% { transform: translateX(-55%) translateY(14px); } 
+  60% { transform: translateX(-55%) translateY(20px); } 
+  70% { transform: translateX(-55%) translateY(19px); } 
+  80% { transform: translateX(-55%) translateY(15px); }
+  90% { transform: translateX(-55%) translateY(9px); } 
+  100% { transform: translateX(-55%) translateY(0); } 
 }
+
 .bookmark-container {
   position: absolute;
   margin-top: 40px;
@@ -77,6 +80,7 @@ body, html {
   display: block;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
+  will-change: transform, opacity;
 }
 
 .bookmark-avatar {
@@ -86,6 +90,7 @@ body, html {
   object-fit: cover;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
+  will-change: transform, opacity;
 }
 
 .bookmark-item p {
@@ -94,6 +99,7 @@ body, html {
   font-size: 10px;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
+  will-change: transform, opacity;
 }
 
 @keyframes bookmarks {
@@ -171,6 +177,7 @@ body, html {
     transform: translateX(-50%);
     animation: bar 1s linear;
     pointer-events: auto; 
+    will-change: transform;
 }
 
 /* Placeholder */
