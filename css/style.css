@@ -81,6 +81,7 @@ body, html {
   color: #333;
   display: block;
   z-index: 7;
+  animation: bookmarks 1s ease-in-out forwards;
 }
 
 .bookmark-avatar {
@@ -89,7 +90,6 @@ body, html {
   height: 50px;
   object-fit: cover;
   z-index: 7;
-  animation: bookmarks 1s ease-in-out forwards;
 }
 
 .bookmark-item p {
@@ -97,7 +97,6 @@ body, html {
   margin-top: 5px;
   font-size: 10px;
   z-index: 7;
-  animation: bookmarks 1s ease-in-out forwards;
 }
 
 @keyframes bookmarks {
