@@ -100,6 +100,7 @@ body, html {
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
     z-index: 5; 
+    pointer-events: none;
 }
 
 /* Search bar container */
@@ -133,6 +134,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     animation: bar 1s linear;
+    pointer-events: auto; 
 }
 
 /* Placeholder */
