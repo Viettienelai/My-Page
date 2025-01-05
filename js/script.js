@@ -1,7 +1,7 @@
 // Lấy tham chiếu đến các thành phần
 const Bar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
-const BarContainer = document.getElementById('search-bar-container');
+const BarContainer = document.getElementById('bar-container');
 const header = document.getElementById('header');
 const headerVideo = document.getElementById('header-video');
 
@@ -37,6 +37,7 @@ window.addEventListener('scroll', () => {
     }
 
 // Cập nhật thay đổi dựa trên progress2
+    Bar.style.top = (0 + 10 * progress2) + 'px';
     Bar.style.width = (350 + 20 * progress2) + 'px';
     Bar.style.height = (50 - 10 * progress2) + 'px';
     Bar.style.borderRadius = (20 - 5 * progress2) + 'px';
