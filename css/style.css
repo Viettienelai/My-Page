@@ -74,7 +74,8 @@ body, html {
 .bookmark-row {
   border: 1px solid #00ff6a;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  height: 80px;
   width: 100%;
   z-index: 6;
 }
@@ -95,7 +96,7 @@ body, html {
 }
 
 .bookmark-item p {
-  margin-top: 2px;
+  margin-top: 5px;
   font-size: 10px;
   z-index: 7;
 }
@@ -110,6 +111,7 @@ body, html {
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
     z-index: 5; 
+    pointer-events: none;
 }
 
 /* Search bar container */
