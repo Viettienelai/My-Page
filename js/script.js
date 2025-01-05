@@ -48,6 +48,7 @@ window.addEventListener('scroll', () => {
     Bar.style.width = (minBarWidth + changeBarWidth * progress2) + '%';
     Bar.style.height = (50 - 10 * progress2) + 'px';
     Bar.style.borderRadius = (20 - 5 * progress2) + 'px';
+    Bar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, ' + (0.1 - 0.1 * progress2) + ')';
     inside.style.width = (minInsideWidth + remainingInsideWidth * progress2) + '%';
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.backgroundColor = 'rgb(' + (255 - 4 * progress2) + ', ' + (255 - 28 * progress2) + ', ' + (255 - 64 * progress2) + ')';
