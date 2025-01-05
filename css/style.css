@@ -226,30 +226,3 @@ body, html {
     color: red;
 }
 
-/* Ruler */
-#ruler {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    height: 100%;
-    background-color: black;
-    z-index: 1000;
-}
-
-#ruler::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50px;
-    width: 100px;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 9px,
-        black 9px,
-        black 10px
-    );
-}
