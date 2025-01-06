@@ -100,17 +100,25 @@ document.addEventListener('click', (event) => {
 
 
 // chuyển hướng tới link
-document.getElementById('search-bar').addEventListener('input', function(event) {
-    let searchValue = event.target.value;
-
-    // Check if the value entered is a valid URL without a protocol
-    if (searchValue && !searchValue.match(/^(http|https):\/\//)) {
-        // Check if the input is a valid URL
-        try {
-            let url = new URL(searchValue, window.location.href);
-            window.location.href = url.href; // Redirect to the URL
-        } catch (e) {
-            // Not a valid URL, let the user continue typing for search
-        }
+function redirectIfBareLink(url) {
+    // Check if the URL starts with a protocol (http://, https://, etc.)
+    if (!/^https?://|^ftp:\/\//.test(url)) {
+      // If not, prepend '//' to make it a valid URL
+      url = '//' + url;
     }
-});
+    window.location.href = url;
+  }
+  
+  // Get the search bar input element
+  const searchBar = document.getElementById('search-bar');
+  
+  // Add an event listener for the 'keyup' event
+  searchBar.addEventListener('keyup', function(event) {
+    // Get the value of the search bar
+    const url = searchBar.value;
+  
+    // If the user presses Enter, redirect if it's a bare link
+    if (event.keyCode === 13) {
+      redirectIfBareLink(url);
+    }
+  });
