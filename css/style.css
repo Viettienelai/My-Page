@@ -266,15 +266,15 @@ body, html {
 }
 
 @keyframes icon {
-  0% { left: 50% transform: translateX(-50%) scaleX(0) scaleY(0.1) translateY(20.7px); }
-10% { left: 35% transform: translateX(-50%) scaleX(0.38) scaleY(0.5) translateY(11.5px); }
-20% { left: 24% transform: translateX(-50%) scaleX(0.63) scaleY(0.75) translateY(5.75px); }
-30% { left: 17% transform: translateX(-50%) scaleX(0.78) scaleY(0.88) translateY(2.76px); }
-40% { left: 13% transform: translateX(-50%) scaleX(0.87) scaleY(0.95) translateY(0.92px); }
-50% { left: 11% transform: translateX(-50%) scaleX(0.92) scaleY(0.98) translateY(0.46px); }
-60% { left: 10% transform: translateX(-50%) scaleX(0.957) scaleY(0.99) translateY(0.23px); }
-70% { left: 9.5% transform: translateX(-50%) scaleX(0.977) scaleY(1) translateY(0px); }
-80% { left: 9.3% transform: translateX(-50%) scaleX(0.99) scaleY(1) translateY(0px); }
-90% { left: 9.1% transform: translateX(-50%) scaleX(0.997) scaleY(1) translateY(0px); }
-100% { left: 9% transform: translateX(-50%) scaleX(1) scaleY(1) translateY(0px); } 
+  0% { left: 50% scaleX(0) scaleY(0.1); }
+  10% { left: 35% scaleX(0.38) scaleY(0.5); }
+  20% { left: 24% scaleX(0.63) scaleY(0.75); }
+  30% { left: 17% scaleX(0.78) scaleY(0.88); }
+  40% { left: 13% scaleX(0.87) scaleY(0.95); }
+  50% { left: 11% scaleX(0.92) scaleY(0.98); }
+  60% { left: 10% scaleX(0.957) scaleY(0.99); }
+  70% { left: 9.5% scaleX(0.977) scaleY(1); }
+  80% { left: 9.3% scaleX(0.99) scaleY(1); }
+  90% { left: 9.1% scaleX(0.997) scaleY(1); }
+  100% { left: 9% scaleX(1) scaleY(1); } 
 }
