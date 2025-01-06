@@ -3,6 +3,7 @@ const Bar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
 const BarContainer = document.getElementById('bar-container');
 const headerVideo = document.getElementById('header-video');
+const icon = document.getElementById('search-icon');
 
 // Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
 window.addEventListener('scroll', () => {
@@ -51,6 +52,8 @@ window.addEventListener('scroll', () => {
     inside.style.width = (minInsideWidth + remainingInsideWidth * progress2) + '%';
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
+    icon.style.top = (10 - 5 * progress2) + 'px';
+    icon.style.left = (9 - 3 * progress2) + '%';
 });
 
 const searchIcon = document.getElementById('search-icon');
