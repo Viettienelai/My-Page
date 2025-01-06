@@ -182,7 +182,7 @@ body, html {
     top: 0px;
     border-radius: 20px;
     border: none;
-    padding-left: 15%;
+    padding-left: 16%;
     font-size: 16%;
     font-family: 'Arial', sans-serif;
     font-weight: 400;
@@ -228,6 +228,7 @@ body, html {
   cursor: pointer;
   z-index: 11;
   pointer-events: auto; 
+  animation: icon 1s ease-out forwards;
 }
 
 #search-options {
@@ -262,4 +263,18 @@ body, html {
   width: 25px;  /* Đặt kích thước của icon */
   height: 25px;
   margin-right: 15px; /* Khoảng cách giữa icon và tên */
+}
+
+@keyframes icon {
+  0% { left: 50% }
+  10% { left: 26.5% }
+  20% { left: 14.75% }
+  30% { left: 8.875% }
+  40% { left: 5.9375% }
+  50% { left: 4.46875% }
+  60% { left: 3.734375% }
+  70% { left: 3.3671875% }
+  80% { left: 3.18359375% }
+  90% { left: 3.091796875% }
+  100% { left: 3% }
 }
