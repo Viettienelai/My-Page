@@ -103,24 +103,21 @@ document.addEventListener('click', (event) => {
 
 
 
-function redirectIfBareLink(url) {
-    // Check if the URL starts with a protocol (http://, https://, etc.)
-    if (!/^https?://|^ftp:\/\//.test(url)) {
-      // If not, prepend '//' to make it a valid URL
-      url = '//' + url;
+document.getElementById('search-bar').addEventListener('input', function(e) {
+    const input = e.target.value.trim();
+    
+    // Kiểm tra xem input có phải là URL không (không có giao thức)
+    const urlPattern = /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}([\/\w \.-]*)*\/?$/;
+    
+    if (urlPattern.test(input)) {
+        // Ngăn chặn form submit mặc định
+        document.getElementById('search-form').onsubmit = function(e) {
+            e.preventDefault();
+            // Chuyển hướng đến URL với giao thức https
+            window.location.href = 'https://' + input;
+        };
+    } else {
+        // Khôi phục hành vi tìm kiếm mặc định
+        document.getElementById('search-form').onsubmit = null;
     }
-    window.location.href = url;
-  }
-  
-  // Get the search bar input element
-  
-  // Add an event listener for the 'keyup' event
-  Bar.addEventListener('keyup', function(event) {
-    // Get the value of the search bar
-    const url = Bar.value;
-  
-    // If the user presses Enter, redirect if it's a bare link
-    if (event.keyCode === 13) {
-      redirectIfBareLink(url);
-    }
-  });
+});
