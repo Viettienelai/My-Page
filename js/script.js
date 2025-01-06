@@ -99,7 +99,10 @@ document.addEventListener('click', (event) => {
 });
 
 
-// chuyển hướng tới link
+
+
+
+
 function redirectIfBareLink(url) {
     // Check if the URL starts with a protocol (http://, https://, etc.)
     if (!/^https?://|^ftp:\/\//.test(url)) {
@@ -110,12 +113,11 @@ function redirectIfBareLink(url) {
   }
   
   // Get the search bar input element
-  const searchBar = document.getElementById('search-bar');
   
   // Add an event listener for the 'keyup' event
-  searchBar.addEventListener('keyup', function(event) {
+  Bar.addEventListener('keyup', function(event) {
     // Get the value of the search bar
-    const url = searchBar.value;
+    const url = Bar.value;
   
     // If the user presses Enter, redirect if it's a bare link
     if (event.keyCode === 13) {
