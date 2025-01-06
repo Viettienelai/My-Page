@@ -258,3 +258,9 @@ body, html {
 #search-options li:hover {
   background: #f0f0f0;
 }
+
+.option-icon {
+  width: 25px;  /* Đặt kích thước của icon */
+  height: 25px;
+  margin-right: 10px; /* Khoảng cách giữa icon và tên */
+}

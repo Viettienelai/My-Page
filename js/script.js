@@ -93,7 +93,7 @@ searchOptions.addEventListener('click', (event) => {
 
 // Close options when clicking outside
 document.addEventListener('click', (event) => {
-    if (!icon.contains(event.target)) {
+    if (!document.getElementById('search-icon').contains(event.target)) {
         searchOptions.style.display = 'none';
     }
 });
