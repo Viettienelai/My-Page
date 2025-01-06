@@ -182,8 +182,8 @@ body, html {
     top: 0px;
     border-radius: 20px;
     border: none;
-    padding-left: 40px;
-    font-size: 20%;
+    padding-left: 60px;
+    font-size: 16%;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     outline: none;
@@ -225,9 +225,8 @@ body, html {
   width: 30px;
   height: 30px;
   left: 8%;
-  border: 1px solid rgb(187, 255, 0);
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 100%;
   z-index: 11;
   pointer-events: auto; 
 }
@@ -239,12 +238,10 @@ body, html {
   left: 8%;
   border-radius: 10px;
   background: white;
-  border: 1px solid #ff0000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   list-style: none;
-  padding: 10px;
   z-index: 12;
-  width: 200px;
+  width: 150px;
   pointer-events: auto; 
 }
 
@@ -253,6 +250,8 @@ body, html {
   border: 1px solid #00ff7b;
   cursor: pointer;
   font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
 #search-options li:hover {
