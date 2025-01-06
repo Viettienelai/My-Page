@@ -52,8 +52,8 @@ window.addEventListener('scroll', () => {
     inside.style.width = (minInsideWidth + remainingInsideWidth * progress2) + '%';
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
-    icon.style.top = (10 - 5 * progress2) + 'px';
-    icon.style.left = (9 - 3 * progress2) + '%';
+    icon.style.top = (10 + 5 * progress2) + 'px';
+    icon.style.left = (9 - 2 * progress2) + '%';
 });
 
 const searchIcon = document.getElementById('search-icon');
