@@ -221,7 +221,7 @@ body, html {
 
 #search-icon {
   position: absolute;
-  top: 5px;
+  top: 10px;
   width: 30px;
   height: 30px;
   left: 8%;
@@ -237,7 +237,7 @@ body, html {
   position: absolute;
   top: -57px;
   left: 8%;
-  border-radius: 20px;
+  border-radius: 10px;
   background: white;
   border: 1px solid #ff0000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
