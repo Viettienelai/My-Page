@@ -98,32 +98,19 @@ document.addEventListener('click', (event) => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Thêm sự kiện submit cho form
-    document.getElementById('search-form').addEventListener('submit', function (e) {
-        e.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
-        const searchBar = document.getElementById('search-bar');
-        let query = searchBar.value.trim();
-        const searchEngine = this.action; // Lấy URL từ action của form
+// chuyển hướng tới link
+document.getElementById('search-bar').addEventListener('input', function(event) {
+    let searchValue = event.target.value;
 
-        // Kiểm tra nếu người dùng nhập URL
-        if (isValidURL(query)) {
-            // Nếu URL thiếu protocol, thêm "https://"
-            if (!query.startsWith('http://') && !query.startsWith('https://')) {
-                query = `https://${query}`;
-            }
-            window.location.href = query; // Chuyển hướng thẳng đến URL
-        } else {
-            // Chuyển đến công cụ tìm kiếm với truy vấn
-            window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
+    // Check if the value entered is a valid URL without a protocol
+    if (searchValue && !searchValue.match(/^(http|https):\/\//)) {
+        // Check if the input is a valid URL
+        try {
+            let url = new URL(searchValue, window.location.href);
+            window.location.href = url.href; // Redirect to the URL
+        } catch (e) {
+            // Not a valid URL, let the user continue typing for search
         }
-    });
-
-    // Hàm kiểm tra URL
-    function isValidURL(str) {
-        // Kiểm tra xem chuỗi có chứa ít nhất một dấu "." và không có khoảng trắng
-        const urlPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:[0-9]+)?(\/.*)?$/;
-        return urlPattern.test(str);
     }
 });
