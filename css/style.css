@@ -224,7 +224,7 @@ body, html {
   top: 5px;
   width: 40px;
   height: 40px;
-  left: 7%;
+  left: 10%;
   border: 1px solid rgb(187, 255, 0);
   cursor: pointer;
   border-radius: 50%;
@@ -235,8 +235,8 @@ body, html {
 #search-options {
   display: none;
   position: absolute;
-  top: 0px;
-  left: 7%;
+  top: -60px;
+  left: 10%;
   background: white;
   border: 1px solid #ff0000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
