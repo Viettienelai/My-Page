@@ -63,7 +63,6 @@ body, html {
   transform: translateX(-50%);
   margin-top: 40px;
   width: 95%;
-  border: 1px solid red;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4;
 }
@@ -71,7 +70,6 @@ body, html {
 .bookmark-row {
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid green;
   width: 100%;
   aspect-ratio: 380 / 90;
   z-index: 6;
@@ -85,7 +83,6 @@ body, html {
   text-decoration: none;
   color: #333;
   display: block;
-  border: 1px solid black;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
 }
