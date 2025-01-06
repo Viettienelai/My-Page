@@ -100,6 +100,8 @@ body, html {
 
 .bookmark-item p {
   opacity: 1;
+  position: absolute;
+  left: 5.42%;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 5px;
@@ -170,10 +172,10 @@ body, html {
     width: calc(100% * 350 / 390);
     height: 50px;
     top: 0px;
-    border-radius: 20%;
+    border-radius: 20px;
     border: none;
     padding-left: 40px;
-    font-size: 20px;
+    font-size: 20%;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     outline: none;
