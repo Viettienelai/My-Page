@@ -109,13 +109,15 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
 
     var query = searchBar.value.trim();
 
-    // Kiểm tra nếu chuỗi nhập vào có phải là URL
-    if (query.indexOf('http') === 0 || query.indexOf('www.') === 0) {
+    // Biểu thức chính quy kiểm tra URL (đã cải tiến)
+    var urlRegex = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/i;
+
+    if (urlRegex.test(query)) {
         // Nếu là URL hợp lệ, chuyển hướng đến URL đó
         if (!/^https?:\/\//i.test(query)) {
-            query = 'http://' + query; // Thêm "http://" nếu thiếu
+            query = 'https://' + query; // Thêm "https://" để đảm bảo an toàn
         }
-        window.location.href = query; // Chuyển hướng đến URL
+        window.location.href = query;
     } else {
         // Nếu không phải URL, tìm kiếm theo công cụ đã chọn
         var searchEngineUrl = searchForm.action;
