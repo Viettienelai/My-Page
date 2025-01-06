@@ -149,7 +149,6 @@ body, html {
     pointer-events: none;
 }
 
-/* Search bar container */
 #bar-container {
     position: relative;
     display: flex;
@@ -163,7 +162,19 @@ body, html {
     z-index: 8; 
 }
 
-/* Search bar */
+#bar-inside-color {
+  position: absolute;
+  width: calc(100% * 350 / 390);
+  height: 50px;
+  border: none;
+  border-radius: 100px;
+  background-color: #FBE3BF;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+  will-change: transform;
+}
+
 #search-bar {
     position: absolute;
     width: calc(100% * 350 / 390);
@@ -208,49 +219,38 @@ body, html {
   100% { transform: translateX(-50%) scaleX(1) scaleY(1) translateY(0px); }
 }
 
-/* Bar inside */
-#bar-inside-color {
-    position: absolute;
-    width: calc(100% * 350 / 390);
-    height: 50px;
-    border: none;
-    border-radius: 100px;
-    background-color: #FBE3BF;
-    z-index: 9;
-    left: 50%;
-    transform: translateX(-50%);
-    will-change: transform;
-}
-
 #search-icon {
+  position: absolute;
+  top: 10px;
   width: 40px;
   height: 40px;
-  margin-right: 10px;
+  left: 15.38461538461538462%;
   border: 1px solid red;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 20;
+  z-index: 11;
   pointer-events: auto; 
 }
 
 #search-options {
   display: none;
   position: absolute;
-  top: 50px;
-  left: 0;
+  top: 0px;
+  left: 12.82051282051282051%;
   background: white;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   list-style: none;
   padding: 10px;
-  z-index: 30;
-  width: 200px; /* Đặt chiều rộng danh sách */
+  z-index: 12;
+  width: 200px;
+  pointer-events: auto; 
 }
 
 #search-options li {
   padding: 5px 10px;
   cursor: pointer;
-  font-size: 16px; /* Kích thước chữ */
+  font-size: 16px;
 }
 
 #search-options li:hover {
