@@ -234,7 +234,7 @@ body, html {
   display: none;
   padding: 0;
   position: absolute;
-  border-radius: 20%;
+  border-radius: 10%;
   top: -57px;
   left: 9%;
   background: white;
@@ -243,11 +243,11 @@ body, html {
   z-index: 12;
   width: 200px;
   pointer-events: auto; 
+  overflow: hidden;
 }
 
 #search-options li {
   padding: 10px 20px;
-  border: 1px solid #00ff7b;
   cursor: pointer;
   font-size: 16px;
   display: flex;
