@@ -69,8 +69,7 @@ body, html {
 
 .bookmark-row {
   display: flex;
-  justify-content: center;
-  gap: 20.083px;
+  justify-content: space-evenly;
   border: 1px solid green;
   width: 100%;
   aspect-ratio: 380 / 90;
@@ -79,6 +78,7 @@ body, html {
 
 .bookmark-item {
   height: 100%;
+  width: 13.49527665317139001%;
   opacity: 0;
   text-align: center;
   text-decoration: none;
