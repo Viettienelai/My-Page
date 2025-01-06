@@ -184,7 +184,7 @@ body, html {
     border: none;
     padding-left: 60px;
     font-size: 16%;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: 400;
     outline: none;
     background-color: rgb(255, 255, 255);
@@ -234,6 +234,7 @@ body, html {
   display: none;
   padding: 0;
   position: absolute;
+  border-radius: 20%;
   top: -57px;
   left: 9%;
   background: white;
