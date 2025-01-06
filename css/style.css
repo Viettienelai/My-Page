@@ -267,15 +267,15 @@ body, html {
 
 @keyframes icon {
   0% { left: 50%; transform: scale(0) translateY(20.7px); }
-10% { left: 37%; transform: scale(0.38) translateY(11.5px); }
-20% { left: 27%; transform: scale(0.63) translateY(5.75px); }
-30% { left: 20%; transform: scale(0.78) translateY(2.76px); }
-40% { left: 15%; transform: scale(0.87) translateY(0.92px); }
-50% { left: 12%; transform: scale(0.92) translateY(0.46px); }
-60% { left: 10.5%; transform: scale(0.957) translateY(0.23px); }
-70% { left: 9.8%; transform: scale(0.977) translateY(0px); }
-80% { left: 9.4%; transform: scale(0.99) translateY(0px); }
-90% { left: 9.2%; transform: scale(0.997) translateY(0px); }
+10% { left: 39%; transform: scale(0.38) translateY(11.5px); }
+20% { left: 30%; transform: scale(0.63) translateY(5.75px); }
+30% { left: 23.5%; transform: scale(0.78) translateY(2.76px); }
+40% { left: 18.5%; transform: scale(0.87) translateY(0.92px); }
+50% { left: 15%; transform: scale(0.92) translateY(0.46px); }
+60% { left: 12.5%; transform: scale(0.957) translateY(0.23px); }
+70% { left: 11%; transform: scale(0.977) translateY(0px); }
+80% { left: 10%; transform: scale(0.99) translateY(0px); }
+90% { left: 9.3%; transform: scale(0.997) translateY(0px); }
 100% { left: 9%; transform: scale(1) translateY(0px); }
 
 }
