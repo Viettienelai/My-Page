@@ -232,3 +232,35 @@ body, html {
     font-weight: bold;
     color: red;
 }
+
+#search-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#search-options {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 10px;
+  z-index: 10;
+  width: 200px; /* Đặt chiều rộng danh sách */
+}
+
+#search-options li {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px; /* Kích thước chữ */
+}
+
+#search-options li:hover {
+  background: #f0f0f0;
+}

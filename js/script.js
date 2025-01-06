@@ -52,3 +52,48 @@ window.addEventListener('scroll', () => {
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
 });
+
+const searchIcon = document.getElementById('search-icon');
+const searchOptions = document.getElementById('search-options');
+const searchForm = document.getElementById('search-form');
+const searchBar = document.getElementById('search-bar');
+
+// Placeholder mặc định theo công cụ tìm kiếm
+const placeholders = {
+    "https://www.google.com/search": "Search on Google...",
+    "https://www.bing.com/search": "Search on Bing...",
+    "https://search.yahoo.com/search": "Search on Yahoo...",
+    "https://duckduckgo.com/": "Search on DuckDuckGo..."
+};
+
+// Toggle options visibility
+searchIcon.addEventListener('click', () => {
+    searchOptions.style.display = searchOptions.style.display === 'block' ? 'none' : 'block';
+});
+
+// Change search engine and placeholder
+searchOptions.addEventListener('click', (event) => {
+    if (event.target.tagName === 'LI') {
+        const engine = event.target.getAttribute('data-engine');
+        const icon = event.target.getAttribute('data-icon');
+        
+        // Cập nhật URL action
+        searchForm.action = engine;
+
+        // Cập nhật biểu tượng
+        searchIcon.src = icon;
+
+        // Cập nhật placeholder
+        searchBar.placeholder = placeholders[engine] || "Search...";
+
+        // Ẩn menu sau khi chọn
+        searchOptions.style.display = 'none';
+    }
+});
+
+// Close options when clicking outside
+document.addEventListener('click', (event) => {
+    if (!document.getElementById('bar-container').contains(event.target)) {
+        searchOptions.style.display = 'none';
+    }
+});
