@@ -69,7 +69,7 @@ body, html {
 .bookmark-row {
   display: flex;
   justify-content: space-evenly;
-  height: 85px;
+  aspect-ratio: 390 / 85;
   width: 100%;
   z-index: 6;
 }
@@ -86,8 +86,8 @@ body, html {
 
 .bookmark-avatar {
   opacity: 1;
-  width: 50px;
-  height: 50px;
+  width: 13,49527665317139%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   z-index: 7;
 }
