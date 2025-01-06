@@ -72,11 +72,12 @@ body, html {
   justify-content: space-evenly;
   border: 1px solid green;
   width: 100%;
-  aspect-ratio: 370.5 / 90;
+  aspect-ratio: 380 / 90;
   z-index: 6;
 }
 
 .bookmark-item {
+  height: 100%;
   opacity: 0;
   text-align: center;
   text-decoration: none;
