@@ -98,28 +98,32 @@ document.addEventListener('click', (event) => {
     }
 });
 
-document.getElementById('search-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Ngăn chặn hành vi mặc định của form
+document.addEventListener('DOMContentLoaded', function () {
+    // Thêm sự kiện submit cho form
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
-    let query = Bar.value.trim();
-    const searchEngine = this.action; // Lấy URL từ action của form
+        const searchBar = document.getElementById('search-bar');
+        let query = searchBar.value.trim();
+        const searchEngine = this.action; // Lấy URL từ action của form
 
-    // Kiểm tra nếu người dùng nhập URL
-    if (isValidURL(query)) {
-        // Nếu URL thiếu protocol, thêm "https://"
-        if (!query.startsWith('http://') && !query.startsWith('https://')) {
-            query = `https://${query}`;
+        // Kiểm tra nếu người dùng nhập URL
+        if (isValidURL(query)) {
+            // Nếu URL thiếu protocol, thêm "https://"
+            if (!query.startsWith('http://') && !query.startsWith('https://')) {
+                query = `https://${query}`;
+            }
+            window.location.href = query; // Chuyển hướng thẳng đến URL
+        } else {
+            // Chuyển đến công cụ tìm kiếm với truy vấn
+            window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
         }
-        window.location.href = query; // Chuyển hướng thẳng đến URL
-    } else {
-        // Chuyển đến công cụ tìm kiếm với truy vấn
-        window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
+    });
+
+    // Hàm kiểm tra URL
+    function isValidURL(str) {
+        // Kiểm tra xem chuỗi có chứa ít nhất một dấu "." và không có khoảng trắng
+        const urlPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:[0-9]+)?(\/.*)?$/;
+        return urlPattern.test(str);
     }
 });
-
-// Hàm kiểm tra URL
-function isValidURL(str) {
-    // Kiểm tra xem chuỗi có chứa ít nhất một dấu "." và không có khoảng trắng
-    const urlPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:[0-9]+)?(\/.*)?$/;
-    return urlPattern.test(str);
-}
