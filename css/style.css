@@ -222,8 +222,8 @@ body, html {
 #search-icon {
   position: absolute;
   top: 5px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   left: 8%;
   border: 1px solid rgb(187, 255, 0);
   cursor: pointer;
@@ -235,7 +235,7 @@ body, html {
 #search-options {
   display: none;
   position: absolute;
-  top: -50px;
+  top: -57px;
   left: 8%;
   border-radius: 20px;
   background: white;

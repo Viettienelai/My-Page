@@ -61,9 +61,9 @@ const searchBar = document.getElementById('search-bar');
 // Placeholder mặc định theo công cụ tìm kiếm
 const placeholders = {
     "https://www.google.com/search": "Search on Google...",
-    "https://www.bing.com/search": "Search on Bing...",
-    "https://search.yahoo.com/search": "Search on Yahoo...",
-    "https://duckduckgo.com/": "Search on DuckDuckGo..."
+    "https://paulgo.io/search": "Search on SearXNG...",
+    "https://search.brave.com/search": "Search on Brave...",
+    "https://www.bing.com/search": "Search on Bing..."
 };
 
 // Toggle options visibility
@@ -85,6 +85,9 @@ searchOptions.addEventListener('click', (event) => {
 
         // Cập nhật placeholder
         searchBar.placeholder = placeholders[engine] || "Search...";
+
+        // Ẩn menu sau khi chọn
+        searchOptions.style.display = 'none';
     }
 });
 
