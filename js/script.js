@@ -85,15 +85,12 @@ searchOptions.addEventListener('click', (event) => {
 
         // Cập nhật placeholder
         searchBar.placeholder = placeholders[engine] || "Search...";
-
-        // Ẩn menu sau khi chọn
-        searchOptions.style.display = 'none';
     }
 });
 
 // Close options when clicking outside
 document.addEventListener('click', (event) => {
-    if (!document.getElementById('bar-container').contains(event.target)) {
+    if (!icon.contains(event.target)) {
         searchOptions.style.display = 'none';
     }
 });
