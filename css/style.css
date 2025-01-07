@@ -67,7 +67,8 @@ body, html {
   background-color: rgba(0, 0, 0, 0);
   z-index: 4;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Đặt hướng sắp xếp theo chiều dọc */
+  align-items: center; /* Căn giữa các container theo chiều ngang */
   gap: 20px;
 }
 
