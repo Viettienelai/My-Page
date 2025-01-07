@@ -74,20 +74,17 @@ body, html {
 
 .container1, .container2 {
   background-color: white;
+  border: 1px solid green;
   border-radius: 30px;
-  display: flex; 
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  flex-wrap: wrap;
-  justify-content: left; 
-  column-gap: 20px;
-  row-gap: 0px;
+  display: flex; /* Chuyển container thành flex container */
+  flex-wrap: wrap; /* Cho phép các item xuống hàng mới */
+  justify-content: flex-start; /* Căn các item theo lề trái */
 }
 
 .bookmark-item {
   height: 80px;
-  width: 46px;
+  width: 74px;
+  border: 1px solid red;
   opacity: 0;
   text-align: center;
   text-decoration: none;
@@ -99,7 +96,7 @@ body, html {
 
 .bookmark-avatar {
   opacity: 1;
-  width: 100%;
+  width: 64.86%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   z-index: 7;
