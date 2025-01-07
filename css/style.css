@@ -1,7 +1,7 @@
 body, html {
     height: 1500px;
     width: 100%;
-    background-color: #F4E9E5;
+    background-color: #F4EAE0;
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
@@ -69,14 +69,16 @@ body, html {
   display: flex;
   flex-direction: column; /* Đặt hướng sắp xếp theo chiều dọc */
   align-items: center; /* Căn giữa các container theo chiều ngang */
-  gap: 40px;
+  gap: 20px;
 }
 
 .container1, .container2 {
   background-color: white;
   border-radius: 30px;
   display: flex; 
-  padding: 15px 15px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 20px;
   flex-wrap: wrap;
   justify-content: left; 
   column-gap: 20px;
@@ -85,7 +87,7 @@ body, html {
 
 .bookmark-item {
   height: 80px;
-  width: 50px;
+  width: 46px;
   opacity: 0;
   text-align: center;
   text-decoration: none;
