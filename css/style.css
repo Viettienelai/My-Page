@@ -234,7 +234,7 @@ body, html {
   transform-origin: top left; /* Gốc mở rộng từ góc trái trên */
   transform: scale(0); /* Ban đầu thu nhỏ */
   opacity: 0; /* Ban đầu trong suốt */
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
 #search-options.active {
@@ -247,7 +247,6 @@ body, html {
 
 #search-options li {
   padding: 10px 20px;
-  border: 1px solid red;
   cursor: pointer;
   font-size: 16px;
   display: flex;
