@@ -225,7 +225,7 @@ body, html {
   left: 9%;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(40px);
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.4);
   list-style: none;
   z-index: 12;
   width: 200px;
@@ -257,7 +257,7 @@ body, html {
 
 #search-options a:hover {
   background: #ffffff;
-  transform: scale(1.1);
+  transform: scale(1.2) translateX(10px); 
 }
 
 .option-icon {
