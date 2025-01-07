@@ -77,7 +77,7 @@ body, html {
   background-color: white;
   padding-top: 20px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 15px;
   border-radius: 30px;
   display: flex; /* Chuyển container thành flex container */
   flex-wrap: wrap; /* Cho phép các item xuống hàng mới */
@@ -86,7 +86,7 @@ body, html {
 
 .bookmark-item {
   height: 85px;
-  width: 64.7px;
+  width: 66px;
   opacity: 0;
   text-align: center;
   text-decoration: none;
