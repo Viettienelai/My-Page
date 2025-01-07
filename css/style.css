@@ -75,7 +75,8 @@ body, html {
 .container1, .container2 {
   border: 1px solid yellow;
   display: flex; 
-  margin-left: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   flex-wrap: wrap;
   justify-content: left; 
   column-gap: 20px; /* Add column gap */
