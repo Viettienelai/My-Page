@@ -80,6 +80,7 @@ body, html {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 30px;
+  overflow-x: hidden;
   display: flex; /* Chuyển container thành flex container */
   flex-wrap: wrap; /* Cho phép các item xuống hàng mới */
   justify-content: flex-start; /* Căn các item theo lề trái */
@@ -95,6 +96,10 @@ body, html {
   display: block;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
+}
+
+.bookmark-item:hover {
+  transform: scale(1.2) translatey(10px); 
 }
 
 .bookmark-avatar {
