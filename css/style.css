@@ -88,7 +88,6 @@ body, html {
 
 .bookmark-item {
   height: 85px;
-  border: 1px solid red;
   width: 66.5px;
   opacity: 0;
   text-align: center;
@@ -99,8 +98,8 @@ body, html {
   animation: bookmarks 1s ease-in-out forwards;
 }
 
-.bookmark-avatar:hover {
-  transform: scale(1.2) translateY(10px); 
+.bookmark-avatar:hover, .bookmark-item p:hover {
+  transform: scale(1.2);
 }
 
 .bookmark-avatar {
