@@ -75,6 +75,7 @@ body, html {
 .container1, .container2 {
   background-color: white;
   border: 1px solid green;
+  width: fit-content;
   border-radius: 30px;
   display: flex; /* Chuyển container thành flex container */
   flex-wrap: wrap; /* Cho phép các item xuống hàng mới */
