@@ -86,7 +86,7 @@ body, html {
 
 .bookmark-item {
   height: 80px;
-  width: 65px;
+  width: 64.5px;
   border: 1px solid red;
   opacity: 0;
   text-align: center;
