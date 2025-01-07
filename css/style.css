@@ -218,7 +218,6 @@ body, html {
 }
 
 #search-options {
-  display: none; /* Ẩn mặc định */
   padding: 0;
   position: absolute;
   border-radius: 10%;
@@ -229,21 +228,21 @@ body, html {
   list-style: none;
   z-index: 12;
   width: 200px;
-  pointer-events: none; /* Không cho click khi ẩn */
+  pointer-events: none; /* Không click được khi ẩn */
   overflow: hidden;
   transform-origin: top left; /* Gốc mở rộng từ góc trái trên */
   transform: scale(0); /* Ban đầu thu nhỏ */
   opacity: 0; /* Ban đầu trong suốt */
-  transition: transform 1s ease, opacity 1s ease;
+  visibility: hidden; /* Ẩn menu */
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #search-options.active {
-  display: block; /* Hiển thị khi thêm class */
-  transform: scale(1); /* Mở rộng hoàn toàn */
-  opacity: 1; /* Hoàn toàn hiển thị */
   pointer-events: auto; /* Cho phép click khi hiện */
+  transform: scale(1); /* Mở rộng */
+  opacity: 1; /* Hiển thị */
+  visibility: visible; /* Hiển thị */
 }
-
 
 #search-options li {
   padding: 10px 20px;

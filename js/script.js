@@ -72,11 +72,7 @@ const placeholders = {
 
 // Toggle options visibility
 searchIcon.addEventListener('click', () => {
-    if (searchOptions.classList.contains('active')) {
-        searchOptions.classList.remove('active');
-    } else {
-        searchOptions.classList.add('active');
-    }
+    searchOptions.classList.toggle('active');
 });
 
 // Change search engine and placeholder
