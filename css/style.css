@@ -58,6 +58,7 @@ body, html {
 }
 
 .bookmark-container {
+  border: 1px solid red;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -71,6 +72,7 @@ body, html {
 }
 
 .bookmark-item {
+  border: 1px solid green;
   height: 90px;
   width: 50px;
   opacity: 0;
