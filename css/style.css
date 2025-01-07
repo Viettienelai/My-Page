@@ -99,7 +99,7 @@ body, html {
 }
 
 .bookmark-avatar:hover {
-  transform: scale(1.2) translateY(-px); 
+  transform: scale(1.2) translateY(-5px); 
 }
 
 .bookmark-avatar {
