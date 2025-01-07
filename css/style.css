@@ -92,6 +92,7 @@ body, html {
   opacity: 0;
   text-align: center;
   text-decoration: none;
+  color: #333;
   display: block;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;

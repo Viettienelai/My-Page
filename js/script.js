@@ -128,3 +128,27 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
         window.location.href = searchEngineUrl + '?q=' + encodeURIComponent(query);
     }
 });
+
+document.querySelectorAll('.container1, .container2').forEach(container => {
+    const items = Array.from(container.querySelectorAll('.bookmark-item'));
+    const rowHeights = new Map();
+  
+    items.forEach((item, index) => {
+      const rowIndex = Math.floor(item.offsetTop / item.offsetHeight); // Tính hàng dựa trên `offsetTop`
+      if (!rowHeights.has(rowIndex)) {
+        rowHeights.set(rowIndex, []);
+      }
+      rowHeights.get(rowIndex).push(item);
+    });
+  
+    let delayMap = {};
+  
+    rowHeights.forEach((rowItems, rowIndex) => {
+      rowItems.forEach((item, i) => {
+        const delay = rowIndex === 0 ? i : delayMap[rowIndex - 1] + 1;
+        item.style.animationDelay = `${delay}s`;
+        delayMap[rowIndex] = delay;
+      });
+    });
+  });
+  
