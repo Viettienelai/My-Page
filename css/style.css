@@ -8,6 +8,7 @@ body, html {
     font-weight: 400;
     font-size: 100px;
     overflow-x: hidden;
+    z-index: 0;
 }
 
 /* Phần header */
