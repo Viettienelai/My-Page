@@ -129,27 +129,21 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
     }
 });
 
-  
-document.querySelectorAll('.container1, .container2').forEach(container => {
+document.querySelectorAll('.container1, .container2').forEach((container) => {
     const items = container.querySelectorAll('.bookmark-item');
-    let lastDelay = 0; // Biến lưu giá trị delay của item trên dòng trước
-    let rowStartIndex = 0; // Lưu index bắt đầu của mỗi dòng
-    
+    let previousRowDelay = 0; // Delay của hàng trước
+  
     items.forEach((item, index) => {
-      const itemRect = item.getBoundingClientRect();
+      const rowTop = item.offsetTop; // Vị trí hàng của item hiện tại
   
-      // Kiểm tra nếu item này xuống dòng mới
-      if (index > 0) {
-        const prevItemRect = items[index - 1].getBoundingClientRect();
-        if (itemRect.top > prevItemRect.top) {
-          lastDelay = parseFloat(items[rowStartIndex].style.animationDelay || '0');
-          rowStartIndex = index; // Cập nhật item đầu tiên của dòng mới
-        }
+      if (index === 0 || rowTop > items[index - 1].offsetTop) {
+        // Nếu là item đầu tiên hoặc là item đầu tiên của hàng mới
+        item.style.animationDelay = `${previousRowDelay + 0.1}s`;
+        previousRowDelay = parseFloat(item.style.animationDelay); // Cập nhật delay của hàng
+      } else {
+        // Nếu là các item khác trong cùng hàng
+        item.style.animationDelay = `${parseFloat(items[index - 1].style.animationDelay) + 0.1}s`;
       }
-  
-      // Tính delay cho item
-      const delay = index === rowStartIndex ? lastDelay : parseFloat(items[index - 1].style.animationDelay || '0') + 0.1;
-      item.style.animationDelay = `${delay}s`;
     });
   });
   
