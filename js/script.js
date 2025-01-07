@@ -129,26 +129,27 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
     }
 });
 
+  
 document.querySelectorAll('.container1, .container2').forEach(container => {
-    const items = Array.from(container.querySelectorAll('.bookmark-item'));
-    const rowHeights = new Map();
-  
+    const items = container.querySelectorAll('.bookmark-item');
+    let lastDelay = 0; // Biến lưu giá trị delay của item trên dòng trước
+    let rowStartIndex = 0; // Lưu index bắt đầu của mỗi dòng
+    
     items.forEach((item, index) => {
-      const rowIndex = Math.floor(item.offsetTop / item.offsetHeight); // Tính hàng dựa trên `offsetTop`
-      if (!rowHeights.has(rowIndex)) {
-        rowHeights.set(rowIndex, []);
+      const itemRect = item.getBoundingClientRect();
+  
+      // Kiểm tra nếu item này xuống dòng mới
+      if (index > 0) {
+        const prevItemRect = items[index - 1].getBoundingClientRect();
+        if (itemRect.top > prevItemRect.top) {
+          lastDelay = parseFloat(items[rowStartIndex].style.animationDelay || '0');
+          rowStartIndex = index; // Cập nhật item đầu tiên của dòng mới
+        }
       }
-      rowHeights.get(rowIndex).push(item);
-    });
   
-    let delayMap = {};
-  
-    rowHeights.forEach((rowItems, rowIndex) => {
-      rowItems.forEach((item, i) => {
-        const delay = rowIndex === 0 ? i : delayMap[rowIndex - 1] + 1;
-        item.style.animationDelay = `${delay}s`;
-        delayMap[rowIndex] = delay;
-      });
+      // Tính delay cho item
+      const delay = index === rowStartIndex ? lastDelay : parseFloat(items[index - 1].style.animationDelay || '0') + 0.1;
+      item.style.animationDelay = `${delay}s`;
     });
   });
   
