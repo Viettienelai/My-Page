@@ -65,14 +65,9 @@ body, html {
   width: 95%;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4;
-}
-
-.bookmark-row {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  aspect-ratio: 380 / 90;
-  z-index: 6;
+  display: flex; /* Chuyển container thành flex container */
+  flex-wrap: wrap; /* Cho phép các item tự động xuống dòng khi không đủ chỗ */
+  justify-content: space-around;
 }
 
 .bookmark-item {
@@ -85,6 +80,7 @@ body, html {
   display: block;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
+  flex: 0 1 18%;
 }
 
 .bookmark-avatar {
@@ -102,7 +98,7 @@ body, html {
   left: 50%;
   transform: translateX(-50%);
   margin-top: 5px;
-  font-size: 11%;
+  font-size: 11px;
   z-index: 7;
 }
 
