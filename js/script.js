@@ -72,7 +72,11 @@ const placeholders = {
 
 // Toggle options visibility
 searchIcon.addEventListener('click', () => {
-    searchOptions.style.display = searchOptions.style.display === 'block' ? 'none' : 'block';
+    if (searchOptions.classList.contains('active')) {
+        searchOptions.classList.remove('active');
+    } else {
+        searchOptions.classList.add('active');
+    }
 });
 
 // Change search engine and placeholder
@@ -91,17 +95,16 @@ searchOptions.addEventListener('click', (event) => {
         searchBar.placeholder = placeholders[engine] || "Search...";
 
         // Ẩn menu sau khi chọn
-        searchOptions.style.display = 'none';
+        searchOptions.classList.remove('active');
     }
 });
 
 // Close options when clicking outside
 document.addEventListener('click', (event) => {
-    if (!document.getElementById('search-icon').contains(event.target)) {
-        searchOptions.style.display = 'none';
+    if (!searchIcon.contains(event.target) && !searchOptions.contains(event.target)) {
+        searchOptions.classList.remove('active');
     }
 });
-
 
 
 

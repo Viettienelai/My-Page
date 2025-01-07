@@ -69,13 +69,14 @@ body, html {
   z-index: 1;
   display: flex;
   flex-direction: column; /* Đặt hướng sắp xếp theo chiều dọc */
-  align-items: center; /* Căn giữa các container theo chiều ngang */
+  align-items: center; 
   gap: 20px;
 }
 
 .container1, .container2 {
   background-color: white;
   padding-top: 20px;
+  padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 30px;
@@ -217,7 +218,7 @@ body, html {
 }
 
 #search-options {
-  display: none;
+  display: none; /* Ẩn mặc định */
   padding: 0;
   position: absolute;
   border-radius: 10%;
@@ -228,12 +229,25 @@ body, html {
   list-style: none;
   z-index: 12;
   width: 200px;
-  pointer-events: auto; 
+  pointer-events: none; /* Không cho click khi ẩn */
   overflow: hidden;
+  transform-origin: top left; /* Gốc mở rộng từ góc trái trên */
+  transform: scale(0); /* Ban đầu thu nhỏ */
+  opacity: 0; /* Ban đầu trong suốt */
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+#search-options.active {
+  display: block; /* Hiển thị khi thêm class */
+  transform: scale(1); /* Mở rộng hoàn toàn */
+  opacity: 1; /* Hoàn toàn hiển thị */
+  pointer-events: auto; /* Cho phép click khi hiện */
+}
+
 
 #search-options li {
   padding: 10px 20px;
+  border: 1px solid red;
   cursor: pointer;
   font-size: 16px;
   display: flex;
