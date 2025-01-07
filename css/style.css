@@ -88,6 +88,7 @@ body, html {
 
 .bookmark-item {
   height: 85px;
+  border: 1px solid red;
   width: 66.5px;
   opacity: 0;
   text-align: center;
@@ -262,7 +263,7 @@ body, html {
 
 #search-options a:hover {
   background: #ffffff;
-  transform: scale(1.2) translateX(10px); 
+  transform: scale(1.1) translateX(10px); 
 }
 
 .option-icon {
