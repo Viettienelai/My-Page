@@ -250,7 +250,7 @@ body, html {
   font-size: 16px;
   display: flex;
   align-items: center;
-  animation: fadeInUp 0.3s forwards;
+  animation: fadeInUp 2s forwards;
 }
 
 #search-options li:nth-child(1) { animation-delay: 0.1s; }
@@ -259,7 +259,7 @@ body, html {
 /* Thêm các option khác nếu cần với các delay tương ứng */
 
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(-5px); }
+  0% { opacity: 0; transform: translateY(-50px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
