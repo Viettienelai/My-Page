@@ -98,8 +98,8 @@ body, html {
   animation: bookmarks 1s ease-in-out forwards;
 }
 
-.bookmark-avatar:hover, .bookmark-item p:hover {
-  transform: scale(1.2);
+.bookmark-avatar:hover {
+  transform: scale(1.2) translateY(-10px); 
 }
 
 .bookmark-avatar {
