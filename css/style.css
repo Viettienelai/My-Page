@@ -64,7 +64,7 @@ body, html {
   left: 50%;
   transform: translateX(-50%);
   margin-top: 30px;
-  width: 95%;
+  width: 90%;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4;
   display: flex;
@@ -75,9 +75,10 @@ body, html {
 
 .container1, .container2 {
   background-color: white;
+  border: 1px solid green;
   padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 30px;
   display: flex; /* Chuyển container thành flex container */
   flex-wrap: wrap; /* Cho phép các item xuống hàng mới */
@@ -86,6 +87,7 @@ body, html {
 
 .bookmark-item {
   height: 85px;
+  border: 1px solid red;
   width: 65px;
   opacity: 0;
   text-align: center;
