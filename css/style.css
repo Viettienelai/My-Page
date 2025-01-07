@@ -66,9 +66,9 @@ body, html {
   width: 95%;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4;
-  display: flex; /* Chuyển container thành flex container */
-  flex-wrap: wrap; /* Cho phép các item tự động xuống dòng khi không đủ chỗ */
-  justify-content: space-around;
+  display: flex; /* Thêm display flex */
+  flex-wrap: wrap; /* Cho phép các item xuống dòng */
+  justify-content: flex-start; /* Căn item từ trái sang */
 }
 
 .bookmark-item {
@@ -82,7 +82,12 @@ body, html {
   display: block;
   z-index: 7;
   animation: bookmarks 1s ease-in-out forwards;
-  flex: 0 1 1%;
+  flex: 0 0 auto; /* Ngăn các item co giãn */
+  margin-right: calc((100% - (50px * (100% / 67.5%))) / ((100% / 67.5%) - 1)); 
+}
+
+.bookmark-item:nth-child(calc(67.5% / 50px)) {
+  margin-right: 0;
 }
 
 .bookmark-avatar {
