@@ -276,6 +276,5 @@ body, html {
   70% { left: 10.7%; transform: scale(0.977) translateY(0px); }
   80% { left: 9.8%; transform: scale(0.99) translateY(0px); }
   90% { left: 9.2%; transform: scale(0.997) translateY(0px); }
-  100% { left: 9%; transform: scale(1) translateY(0px); }
-  
+  100% { left: 9%; transform: scale(1) translateY(0px); }  
 }
