@@ -99,7 +99,7 @@ body, html {
 }
 
 .bookmark-avatar:hover {
-  transform: scale(1.2) translateY(-3px); 
+  transform: scale(1.2) translateY(-px); 
 }
 
 .bookmark-avatar {
@@ -107,7 +107,7 @@ body, html {
   width: 73%;
   aspect-ratio: 1 / 1;
   z-index: 7;
-  transition: transform 0.4s ease;
+  transition: transform 0.2s ease;
 }
 
 .bookmark-item p {
@@ -259,12 +259,12 @@ body, html {
   align-items: center;
   color: black;
   text-decoration: none;
-  transition: transform 0.4s ease;
+  transition: transform 0.2s ease;
 }
 
 #search-options a:hover {
   background: #ffffff;
-  transform: scale(1.1) translateX(10px); 
+  transform: scale(1.1) translateX(5px); 
 }
 
 .option-icon {
