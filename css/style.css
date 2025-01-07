@@ -66,6 +66,12 @@ body, html {
   width: 95%;
   background-color: rgba(0, 0, 0, 0);
   z-index: 4;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.container1, .container2 {
   display: flex; 
   flex-wrap: wrap;
   justify-content: left; 
