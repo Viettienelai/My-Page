@@ -99,7 +99,7 @@ body, html {
   animation: bookmarks 1s ease-in-out forwards;
 }
 
-.bookmark-item:hover {
+.bookmark-avatar:hover {
   transform: scale(1.2) translateY(10px); 
 }
 
