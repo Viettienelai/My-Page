@@ -73,12 +73,16 @@ body, html {
 }
 
 .container1, .container2 {
-  display: flex; 
   border: 1px solid yellow;
+  display: flex; 
   flex-wrap: wrap;
   justify-content: left; 
   column-gap: 20px; /* Add column gap */
   row-gap: 0px;
+}
+
+.container1 > *:last-child, .container2 > *:last-child {
+  margin-right: 0;
 }
 
 .bookmark-item {
