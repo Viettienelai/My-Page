@@ -68,8 +68,8 @@ body, html {
   z-index: 4;
   display: flex; 
   flex-wrap: wrap;
-  justify-content: space-around; 
-  column-gap: 10px; /* Add column gap */
+  justify-content: left; 
+  column-gap: 20px; /* Add column gap */
   row-gap: 0px;
 }
 
