@@ -77,7 +77,7 @@ searchIcon.addEventListener('click', () => {
 
 // Change search engine and placeholder
 searchOptions.addEventListener('click', (event) => {
-    if (event.target.tagName === 'LI') {
+    if (event.target.tagName === 'A') {
         const engine = event.target.getAttribute('data-engine');
         const icon = event.target.getAttribute('data-icon');
         
