@@ -41,7 +41,7 @@ window.addEventListener('scroll', () => {
     let changeBarWidth = maxBarWidth - minBarWidth;
 
     let minInsideWidth = (100 * 350 / 390); 
-    let remainingInsideWidth = 100 - minInsideWidth;
+    let changeInsideWidth = 100 - minInsideWidth;
 
 // Cập nhật thay đổi dựa trên progress2
     Bar.style.top = (0 + 10 * progress2) + 'px';
@@ -49,12 +49,25 @@ window.addEventListener('scroll', () => {
     Bar.style.height = (50 - 10 * progress2) + 'px';
     Bar.style.borderRadius = (20 - 5 * progress2) + 'px';
     Bar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, ' + (0.2 - 0.2 * progress2) + ')';
-    inside.style.width = (minInsideWidth + remainingInsideWidth * progress2) + '%';
+    inside.style.width = (minInsideWidth + changeInsideWidth * progress2) + '%';
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
     icon.style.top = (10 + 5 * progress2) + 'px';
     icon.style.left = (9 - 2 * progress2) + '%';
 });
+
+const isMobile = window.innerWidth <= 768;
+if (isMobile) {
+    // Giá trị cho màn hình mobile
+    return {
+        width: 100 + '%'
+    };
+} else {
+    // Giá trị cho màn hình desktop    
+    return {
+        width: (50 + 50 * progress2) + '%'
+    };
+}
 
 const searchIcon = document.getElementById('search-icon');
 const searchOptions = document.getElementById('search-options');
