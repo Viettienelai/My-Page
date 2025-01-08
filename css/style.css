@@ -144,7 +144,6 @@ body, html {
 
 #bar-container {
     position: relative;
-    border: 10px solid red;
     display: flex;
     justify-content: center;
     top: 290px;
@@ -153,13 +152,8 @@ body, html {
     transform: translateX(-50%);
     width: 50%;
     height: 60px;
-    z-index: 80; 
+    z-index: 8; 
 }
-
-@media (max-width: 768px) {
-  #bar-container { width: 100%; }
-}
-
 
 #bar-inside-color {
   position: absolute;
