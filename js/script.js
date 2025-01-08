@@ -13,22 +13,28 @@ window.addEventListener('scroll', () => {
     // Kiểm tra nếu màn hình có độ rộng nhỏ hơn 768px
     const isMobile = window.innerWidth < 768;
     
-    // Điều chỉnh độ rộng của BarContainer dựa trên kích thước màn hình
-    if (isMobile) {
-        BarContainer.style.width = '100%';  // 100% cho màn hình di động
-    } else {
-        // Tính toán độ rộng BarContainer với progress2 cho màn hình lớn
-        BarContainer.style.width = (50 + 50 * progress2) + '%';
-    }
-
-    // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 300px, di chuyển container lên
     if (scrollTop <= 290) {
-        BarContainer.style.top = (290 - scrollTop) + 'px';  // Dịch chuyển BarContainer khi cuộn
+        // Kiểm tra nếu vị trí cuộn trang nhỏ hơn hoặc bằng 290
+        if (isMobile) {
+            // Kiểm tra nếu là màn hình di động
+            BarContainer.style.top = (290 - scrollTop) + 'px';
+            BarContainer.style.width = '100%';  // Đặt độ rộng 100% cho màn hình di động
+        } else {
+            // Nếu không phải màn hình di động
+            BarContainer.style.top = (290 - scrollTop) + 'px';
+            BarContainer.style.width = (50 + 50 * progress2) + '%';  // Đặt độ rộng tùy vào progress2
+        }
     } else {
-        // Nếu vị trí cuộn lớn hơn 300px, giữ container ở vị trí cố định
-        BarContainer.style.top = '0px';
+        // Nếu vị trí cuộn lớn hơn 290px
+        BarContainer.style.top = '0px';  // Giữ BarContainer ở vị trí cố định
+    
+        if (isMobile) {
+            BarContainer.style.width = '100%';  // Đặt độ rộng 100% cho màn hình di động
+        } else {
+            BarContainer.style.width = (50 + 50 * progress2) + '%';  // Đặt độ rộng tùy vào progress2
+        }
     }
-
+    
     // Tính toán tỉ lệ thay đổi hiệu ứng 1
     let progress1 = Math.min(scrollTop / 230, 1);
 
@@ -67,9 +73,6 @@ window.addEventListener('scroll', () => {
     icon.style.top = (10 + 5 * progress2) + 'px';
     icon.style.left = (9 - 2 * progress2) + '%';
 });
-
-// Các đoạn mã khác vẫn giữ nguyên như bạn đã có...
-
 
 const searchIcon = document.getElementById('search-icon');
 const searchOptions = document.getElementById('search-options');
