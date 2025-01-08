@@ -23,7 +23,7 @@ window.addEventListener('scroll', () => {
 
     // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 300px, di chuyển container lên
     if (scrollTop <= 290) {
-        BarContainer.style.top = 290 - scrollTop + 'px';
+        BarContainer.style.top = (290 - scrollTop) + 'px';  // Dịch chuyển BarContainer khi cuộn
     } else {
         // Nếu vị trí cuộn lớn hơn 300px, giữ container ở vị trí cố định
         BarContainer.style.top = '0px';
@@ -67,6 +67,9 @@ window.addEventListener('scroll', () => {
     icon.style.top = (10 + 5 * progress2) + 'px';
     icon.style.left = (9 - 2 * progress2) + '%';
 });
+
+// Các đoạn mã khác vẫn giữ nguyên như bạn đã có...
+
 
 const searchIcon = document.getElementById('search-icon');
 const searchOptions = document.getElementById('search-options');
