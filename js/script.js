@@ -77,9 +77,12 @@ searchIcon.addEventListener('click', () => {
 
 // Change search engine and placeholder
 searchOptions.addEventListener('click', (event) => {
-    if (event.target.tagName === 'A') {
-        const engine = event.target.getAttribute('data-engine');
-        const icon = event.target.getAttribute('data-icon');
+    const link = event.target.closest('a'); // Tìm phần tử <a>
+    if (link) {
+        event.preventDefault(); // Ngăn chuyển hướng
+
+        const engine = link.getAttribute('data-engine');
+        const icon = link.getAttribute('data-icon');
         
         // Cập nhật URL action
         searchForm.action = engine;
