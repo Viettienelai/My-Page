@@ -1,7 +1,7 @@
 // Lấy tham chiếu đến các thành phần
-const Bar = document.getElementById('search-bar');
+const bar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
-const BarContainer = document.getElementById('bar-container');
+const barContainer = document.getElementById('bar-container');
 const headerVideo = document.getElementById('header-video');
 const icon = document.getElementById('search-icon');
 
@@ -12,10 +12,10 @@ window.addEventListener('scroll', () => {
 
 // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 300px, di chuyển container lên
     if (scrollTop <= 290) {
-        BarContainer.style.top = 290 - scrollTop + 'px';
+        barContainer.style.top = 290 - scrollTop + 'px';
     } else {
     // Nếu vị trí cuộn lớn hơn 300px, giữ container ở vị trí cố định
-        BarContainer.style.top = '0px';
+        barContainer.style.top = '0px';
     }
     
 // Tính toán tỉ lệ thay đổi hiệu ứng 1
@@ -44,11 +44,11 @@ window.addEventListener('scroll', () => {
     let changeInsideWidth = 100 - minInsideWidth;
 
 // Cập nhật thay đổi dựa trên progress2
-    Bar.style.top = (0 + 10 * progress2) + 'px';
-    Bar.style.width = (minBarWidth + changeBarWidth * progress2) + '%';
-    Bar.style.height = (50 - 10 * progress2) + 'px';
-    Bar.style.borderRadius = (20 - 5 * progress2) + 'px';
-    Bar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, ' + (0.2 - 0.2 * progress2) + ')';
+    bar.style.top = (0 + 10 * progress2) + 'px';
+    bar.style.width = (minBarWidth + changeBarWidth * progress2) + '%';
+    bar.style.height = (50 - 10 * progress2) + 'px';
+    bar.style.borderRadius = (20 - 5 * progress2) + 'px';
+    bar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, ' + (0.2 - 0.2 * progress2) + ')';
     inside.style.width = (minInsideWidth + changeInsideWidth * progress2) + '%';
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
@@ -59,14 +59,10 @@ window.addEventListener('scroll', () => {
 const isMobile = window.innerWidth <= 768;
 if (isMobile) {
     // Giá trị cho màn hình mobile
-    return {
-        width: 100 + '%'
-    };
+        barContainer.style.width = 100 + '%';
 } else {
     // Giá trị cho màn hình desktop    
-    return {
-        width: (50 + 50 * progress2) + '%'
-    };
+    barContainer.style.width = (50 + 50 * progress2) + '%';
 }
 
 const searchIcon = document.getElementById('search-icon');
