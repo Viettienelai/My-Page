@@ -1,3 +1,4 @@
+hi 
 if (window.innerWidth <= 768) {
 // Lấy tham chiếu đến các thành phần
 const bar = document.getElementById('search-bar');
