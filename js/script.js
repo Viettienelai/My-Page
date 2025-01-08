@@ -145,28 +145,34 @@ document.querySelectorAll('.container1, .container2').forEach((container) => {
         }
     });
 });
-} else {
-// Lấy tham chiếu đến các thành phần
+} 
+
+
+
+
+
+
+
+
+
+
+
+else {
 const bar = document.getElementById('search-bar');
 const inside = document.getElementById('bar-inside-color');
 const barContainer = document.getElementById('bar-container');
 const headerVideo = document.getElementById('header-video');
 const icon = document.getElementById('search-icon');
 
-// Thêm trình nghe sự kiện cuộn (scroll) vào cửa sổ
 window.addEventListener('scroll', () => {
-    // Lấy vị trí cuộn trang
     const scrollTop = window.scrollY;
 
-    // Nếu vị trí cuộn nằm trong khoảng từ 0 đến 300px, di chuyển container lên
     if (scrollTop <= 290) {
         barContainer.style.top = 290 - scrollTop + 'px';
     } else {
-        // Nếu vị trí cuộn lớn hơn 300px, giữ container ở vị trí cố định
         barContainer.style.top = '0px';
     }
 
-    // Tính toán tỉ lệ thay đổi hiệu ứng 1
     let progress1 = Math.min(scrollTop / 230, 1);
 
     if (scrollTop <= 230) {
@@ -174,17 +180,14 @@ window.addEventListener('scroll', () => {
     } else {
         headerVideo.style.top = '230px';
     }
-    // Cập nhật thay đổi dựa trên progress1
     headerVideo.style.height = 250 - 200 * progress1 + 'px';
     headerVideo.style.width = 250 - 200 * progress1 + 'px';
 
-    // Tính toán tỉ lệ thay đổi hiệu ứng 2
-    let progress2 = 0; // Khởi tạo giá trị mặc định
+    let progress2 = 0; 
     if (scrollTop >= 240) {
         progress2 = Math.min((scrollTop - 240) / 60, 1);
     }
 
-    // Cập nhật thay đổi dựa trên progress2
     bar.style.top = (0 + 10 * progress2) + 'px';
     bar.style.width = (40 + 10 * progress2) + '%';
     bar.style.height = (50 - 10 * progress2) + 'px';
@@ -194,15 +197,15 @@ window.addEventListener('scroll', () => {
     inside.style.height = (50 + 10 * progress2) + 'px';
     inside.style.borderRadius = (100 - 100 * progress2) + 'px';
     icon.style.top = (10 + 5 * progress2) + 'px';
-    icon.style.left = (9 - 2 * progress2) + '%';
+    icon.style.left = (32 - 5 * progress2) + '%';
 });
 
 const searchIcon = document.getElementById('search-icon');
 const searchOptions = document.getElementById('search-options');
 const searchForm = document.getElementById('search-form');
 const searchBar = document.getElementById('search-bar');
+const backgroundBlur = document.getElementById('background-blur');
 
-// Placeholder mặc định theo công cụ tìm kiếm
 const placeholders = {
     "https://www.google.com/search": "Search on Google...",
     "https://paulgo.io/search": "Search on SearXNG...",
@@ -214,6 +217,7 @@ const placeholders = {
 // Toggle options visibility
 searchIcon.addEventListener('click', () => {
     searchOptions.classList.toggle('active');
+    backgroundBlur.classList.toggle('active');
 });
 
 // Change search engine and placeholder
@@ -236,6 +240,7 @@ searchOptions.addEventListener('click', (event) => {
 
         // Ẩn menu sau khi chọn
         searchOptions.classList.remove('active');
+        backgroundBlur.classList.remove('active');
     }
 });
 
@@ -243,6 +248,7 @@ searchOptions.addEventListener('click', (event) => {
 document.addEventListener('click', (event) => {
     if (!searchIcon.contains(event.target) && !searchOptions.contains(event.target)) {
         searchOptions.classList.remove('active');
+        backgroundBlur.classList.remove('active');
     }
 });
 
