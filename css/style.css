@@ -148,9 +148,9 @@ body, html {
     justify-content: center;
     top: 290px;
     border: none;
-    left: 100%;
+    left: 50%;
     transform: translateX(-50%);
-    width: 50%;
+    width: 100%;
     height: 60px;
     z-index: 8; 
 }
