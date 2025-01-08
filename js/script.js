@@ -56,6 +56,15 @@ window.addEventListener('scroll', () => {
     icon.style.left = (9 - 2 * progress2) + '%';
 });
 
+const isMobile = window.innerWidth <= 768;
+if (isMobile) {
+    // Giá trị cho màn hình mobile
+    BarContainer.style.width = 100 + '%';
+} else {
+    // Giá trị cho màn hình desktop    
+    BarContainer.style.width = (50 + 50 * progress2) + '%';
+}
+
 const searchIcon = document.getElementById('search-icon');
 const searchOptions = document.getElementById('search-options');
 const searchForm = document.getElementById('search-form');
